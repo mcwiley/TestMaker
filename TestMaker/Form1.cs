@@ -26,27 +26,46 @@ namespace TestMaker
         private void FillTopics()
         {
             DataSet ds = new DataSet();
-            ds = General.GetData("select TopicID,TopicName from Topics");
+            ds = General.GetData("select TopicID as ID,TopicName as Name from Topics");
 
-            foreach(DataRow dr in ds.Tables[0].Rows)
-            {
-                lstbxTopics.Items.Add(dr["TopicName"] + " : " + dr["TopicID"]);
-            }
+            dgvTopics.DataSource = ds;
+            dgvTopics.DataMember = "Data_Table";
+
+            dgvTopics.RowHeadersVisible = false;
+
+            dgvTopics.Columns[0].Visible = false;
+            //dgvTopics.Columns[0].Width = 50;
+
+            dgvTopics.Columns[1].HeaderText = "Topic Name";
+            dgvTopics.Columns[1].Width = 400;
+
+            dgvTopics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        private void LstbxTopics_Click(object sender, EventArgs e)
+        private void FillSubTopics(string tID)
         {
-            //int idx = lstbxTopics.SelectedIndex;
-            txtTopic.Text = lstbxTopics.SelectedItem.ToString();
-            btnAddUpdateTopic.Text = "Update";
+            DataSet dsub = new DataSet();
+            dsub = General.GetData("select SubTopicID as subID, TopicID as topID,SubTopicName as subName from SubTopics where TopicID = " + tID);
+
+            dgvSubTopics.DataSource = dsub;
+            dgvSubTopics.DataMember = "Data_Table";
+
+            dgvSubTopics.RowHeadersVisible = false;
+
+            dgvSubTopics.Columns[0].Visible = false;
+            dgvSubTopics.Columns[1].Visible = false;
+
+            dgvSubTopics.Columns[2].HeaderText = "SubTopic Name";
+            dgvSubTopics.Columns[2].Width = 400;
+
+            dgvSubTopics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void BtnTopicTextClear_Click(object sender, EventArgs e)
         {
             btnAddUpdateTopic.Text = "Add";
             txtTopic.Clear();
-            lstbxTopics.SelectedIndex = -1;
-            lstbxSubTopics.Items.Clear();
+            dgvTopics.ClearSelection();
         }
 
         private void BtnAddUpdateTopic_Click(object sender, EventArgs e)
@@ -82,13 +101,22 @@ namespace TestMaker
         {
             btnAddUpdateSubTopics.Text = "Add";
             txtSubTopics.Clear();
-            lstbxSubTopics.SelectedIndex = -1;
+            dgvSubTopics.ClearSelection();
+            dgvSubTopics.DataSource = null;
+
         }
 
-        private void LstbxSubTopics_Click(object sender, EventArgs e)
+        private void DgvTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int idx = lstbxTopics.SelectedIndex;
-            txtTopic.Text = lstbxTopics.SelectedItem.ToString();
+            txtTopic.Text = dgvTopics.CurrentRow.Cells[1].Value.ToString();
+            General.SelectedTopic = dgvTopics.CurrentRow.Cells[0].Value.ToString();
+            btnAddUpdateTopic.Text = "Update";
+            FillSubTopics(General.SelectedTopic);
+        }
+
+        private void DgvSubTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtSubTopics.Text = dgvSubTopics.CurrentRow.Cells[2].Value.ToString();
             btnAddUpdateSubTopics.Text = "Update";
         }
     }

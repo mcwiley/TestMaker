@@ -31,20 +31,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabTest = new System.Windows.Forms.TabControl();
             this.tabPageTopics = new System.Windows.Forms.TabPage();
+            this.btnSubTopicTextClear = new System.Windows.Forms.Button();
+            this.btnTopicTextClear = new System.Windows.Forms.Button();
             this.txtSubTopics = new System.Windows.Forms.TextBox();
-            this.lstbxSubTopics = new System.Windows.Forms.ListBox();
             this.btnAddUpdateSubTopics = new System.Windows.Forms.Button();
-            this.lblSubTopics = new System.Windows.Forms.Label();
             this.txtTopic = new System.Windows.Forms.TextBox();
-            this.lstbxTopics = new System.Windows.Forms.ListBox();
             this.btnAddUpdateTopic = new System.Windows.Forms.Button();
             this.lblTopics = new System.Windows.Forms.Label();
             this.tabPageQuestions = new System.Windows.Forms.TabPage();
             this.tabPageTests = new System.Windows.Forms.TabPage();
-            this.btnTopicTextClear = new System.Windows.Forms.Button();
-            this.btnSubTopicTextClear = new System.Windows.Forms.Button();
+            this.dgvTopics = new System.Windows.Forms.DataGridView();
+            this.dgvSubTopics = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabTest.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTopics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,14 +73,14 @@
             // 
             // tabPageTopics
             // 
+            this.tabPageTopics.Controls.Add(this.label2);
+            this.tabPageTopics.Controls.Add(this.dgvSubTopics);
+            this.tabPageTopics.Controls.Add(this.dgvTopics);
             this.tabPageTopics.Controls.Add(this.btnSubTopicTextClear);
             this.tabPageTopics.Controls.Add(this.btnTopicTextClear);
             this.tabPageTopics.Controls.Add(this.txtSubTopics);
-            this.tabPageTopics.Controls.Add(this.lstbxSubTopics);
             this.tabPageTopics.Controls.Add(this.btnAddUpdateSubTopics);
-            this.tabPageTopics.Controls.Add(this.lblSubTopics);
             this.tabPageTopics.Controls.Add(this.txtTopic);
-            this.tabPageTopics.Controls.Add(this.lstbxTopics);
             this.tabPageTopics.Controls.Add(this.btnAddUpdateTopic);
             this.tabPageTopics.Controls.Add(this.lblTopics);
             this.tabPageTopics.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,26 +92,36 @@
             this.tabPageTopics.Text = "Topics / SubTopics";
             this.tabPageTopics.UseVisualStyleBackColor = true;
             // 
+            // btnSubTopicTextClear
+            // 
+            this.btnSubTopicTextClear.Location = new System.Drawing.Point(802, 488);
+            this.btnSubTopicTextClear.Name = "btnSubTopicTextClear";
+            this.btnSubTopicTextClear.Size = new System.Drawing.Size(113, 23);
+            this.btnSubTopicTextClear.TabIndex = 10;
+            this.btnSubTopicTextClear.Text = "Clear";
+            this.btnSubTopicTextClear.UseVisualStyleBackColor = true;
+            this.btnSubTopicTextClear.Click += new System.EventHandler(this.BtnSubTopicTextClear_Click);
+            // 
+            // btnTopicTextClear
+            // 
+            this.btnTopicTextClear.Location = new System.Drawing.Point(339, 488);
+            this.btnTopicTextClear.Name = "btnTopicTextClear";
+            this.btnTopicTextClear.Size = new System.Drawing.Size(113, 23);
+            this.btnTopicTextClear.TabIndex = 9;
+            this.btnTopicTextClear.Text = "Clear";
+            this.btnTopicTextClear.UseVisualStyleBackColor = true;
+            this.btnTopicTextClear.Click += new System.EventHandler(this.BtnTopicTextClear_Click);
+            // 
             // txtSubTopics
             // 
-            this.txtSubTopics.Location = new System.Drawing.Point(414, 287);
+            this.txtSubTopics.Location = new System.Drawing.Point(489, 431);
             this.txtSubTopics.Name = "txtSubTopics";
-            this.txtSubTopics.Size = new System.Drawing.Size(373, 22);
+            this.txtSubTopics.Size = new System.Drawing.Size(426, 22);
             this.txtSubTopics.TabIndex = 8;
-            // 
-            // lstbxSubTopics
-            // 
-            this.lstbxSubTopics.FormattingEnabled = true;
-            this.lstbxSubTopics.ItemHeight = 16;
-            this.lstbxSubTopics.Location = new System.Drawing.Point(26, 287);
-            this.lstbxSubTopics.Name = "lstbxSubTopics";
-            this.lstbxSubTopics.Size = new System.Drawing.Size(373, 212);
-            this.lstbxSubTopics.TabIndex = 7;
-            this.lstbxSubTopics.Click += new System.EventHandler(this.LstbxSubTopics_Click);
             // 
             // btnAddUpdateSubTopics
             // 
-            this.btnAddUpdateSubTopics.Location = new System.Drawing.Point(802, 287);
+            this.btnAddUpdateSubTopics.Location = new System.Drawing.Point(802, 459);
             this.btnAddUpdateSubTopics.Name = "btnAddUpdateSubTopics";
             this.btnAddUpdateSubTopics.Size = new System.Drawing.Size(113, 23);
             this.btnAddUpdateSubTopics.TabIndex = 6;
@@ -117,35 +129,16 @@
             this.btnAddUpdateSubTopics.UseVisualStyleBackColor = true;
             this.btnAddUpdateSubTopics.Click += new System.EventHandler(this.BtnAddUpdateSubTopics_Click);
             // 
-            // lblSubTopics
-            // 
-            this.lblSubTopics.AutoSize = true;
-            this.lblSubTopics.Location = new System.Drawing.Point(23, 268);
-            this.lblSubTopics.Name = "lblSubTopics";
-            this.lblSubTopics.Size = new System.Drawing.Size(74, 16);
-            this.lblSubTopics.TabIndex = 5;
-            this.lblSubTopics.Text = "SubTopics";
-            // 
             // txtTopic
             // 
-            this.txtTopic.Location = new System.Drawing.Point(414, 35);
+            this.txtTopic.Location = new System.Drawing.Point(26, 431);
             this.txtTopic.Name = "txtTopic";
-            this.txtTopic.Size = new System.Drawing.Size(373, 22);
+            this.txtTopic.Size = new System.Drawing.Size(426, 22);
             this.txtTopic.TabIndex = 4;
-            // 
-            // lstbxTopics
-            // 
-            this.lstbxTopics.FormattingEnabled = true;
-            this.lstbxTopics.ItemHeight = 16;
-            this.lstbxTopics.Location = new System.Drawing.Point(26, 35);
-            this.lstbxTopics.Name = "lstbxTopics";
-            this.lstbxTopics.Size = new System.Drawing.Size(373, 212);
-            this.lstbxTopics.TabIndex = 3;
-            this.lstbxTopics.Click += new System.EventHandler(this.LstbxTopics_Click);
             // 
             // btnAddUpdateTopic
             // 
-            this.btnAddUpdateTopic.Location = new System.Drawing.Point(802, 35);
+            this.btnAddUpdateTopic.Location = new System.Drawing.Point(339, 459);
             this.btnAddUpdateTopic.Name = "btnAddUpdateTopic";
             this.btnAddUpdateTopic.Size = new System.Drawing.Size(113, 23);
             this.btnAddUpdateTopic.TabIndex = 2;
@@ -183,25 +176,38 @@
             this.tabPageTests.Text = "Tests / Quizes";
             this.tabPageTests.UseVisualStyleBackColor = true;
             // 
-            // btnTopicTextClear
+            // dgvTopics
             // 
-            this.btnTopicTextClear.Location = new System.Drawing.Point(802, 64);
-            this.btnTopicTextClear.Name = "btnTopicTextClear";
-            this.btnTopicTextClear.Size = new System.Drawing.Size(113, 23);
-            this.btnTopicTextClear.TabIndex = 9;
-            this.btnTopicTextClear.Text = "Clear";
-            this.btnTopicTextClear.UseVisualStyleBackColor = true;
-            this.btnTopicTextClear.Click += new System.EventHandler(this.BtnTopicTextClear_Click);
+            this.dgvTopics.AllowUserToAddRows = false;
+            this.dgvTopics.AllowUserToDeleteRows = false;
+            this.dgvTopics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTopics.Location = new System.Drawing.Point(26, 35);
+            this.dgvTopics.Name = "dgvTopics";
+            this.dgvTopics.ReadOnly = true;
+            this.dgvTopics.Size = new System.Drawing.Size(426, 383);
+            this.dgvTopics.TabIndex = 11;
+            this.dgvTopics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTopics_CellContentClick);
             // 
-            // btnSubTopicTextClear
+            // dgvSubTopics
             // 
-            this.btnSubTopicTextClear.Location = new System.Drawing.Point(802, 316);
-            this.btnSubTopicTextClear.Name = "btnSubTopicTextClear";
-            this.btnSubTopicTextClear.Size = new System.Drawing.Size(113, 23);
-            this.btnSubTopicTextClear.TabIndex = 10;
-            this.btnSubTopicTextClear.Text = "Clear";
-            this.btnSubTopicTextClear.UseVisualStyleBackColor = true;
-            this.btnSubTopicTextClear.Click += new System.EventHandler(this.BtnSubTopicTextClear_Click);
+            this.dgvSubTopics.AllowUserToAddRows = false;
+            this.dgvSubTopics.AllowUserToDeleteRows = false;
+            this.dgvSubTopics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubTopics.Location = new System.Drawing.Point(489, 35);
+            this.dgvSubTopics.Name = "dgvSubTopics";
+            this.dgvSubTopics.ReadOnly = true;
+            this.dgvSubTopics.Size = new System.Drawing.Size(426, 383);
+            this.dgvSubTopics.TabIndex = 12;
+            this.dgvSubTopics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSubTopics_CellContentClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(486, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "SubTopics";
             // 
             // Form1
             // 
@@ -218,6 +224,8 @@
             this.tabTest.ResumeLayout(false);
             this.tabPageTopics.ResumeLayout(false);
             this.tabPageTopics.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTopics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,17 +237,17 @@
         private System.Windows.Forms.TabControl tabTest;
         private System.Windows.Forms.TabPage tabPageTopics;
         private System.Windows.Forms.TextBox txtSubTopics;
-        private System.Windows.Forms.ListBox lstbxSubTopics;
         private System.Windows.Forms.Button btnAddUpdateSubTopics;
-        private System.Windows.Forms.Label lblSubTopics;
         private System.Windows.Forms.TextBox txtTopic;
-        private System.Windows.Forms.ListBox lstbxTopics;
         private System.Windows.Forms.Button btnAddUpdateTopic;
         private System.Windows.Forms.Label lblTopics;
         private System.Windows.Forms.TabPage tabPageQuestions;
         private System.Windows.Forms.TabPage tabPageTests;
         private System.Windows.Forms.Button btnTopicTextClear;
         private System.Windows.Forms.Button btnSubTopicTextClear;
+        private System.Windows.Forms.DataGridView dgvTopics;
+        private System.Windows.Forms.DataGridView dgvSubTopics;
+        private System.Windows.Forms.Label label2;
     }
 }
 
