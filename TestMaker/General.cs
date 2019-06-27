@@ -52,6 +52,28 @@ namespace TestMaker
             return ds;
         }
 
+        public static bool AddUpdate(string daSQL)
+        {
+            bool rslt = true;
+
+            try
+            {
+                DataSet ds = new DataSet();
+                SqlConnection connection = new SqlConnection(General.myDBConn);
+                SqlCommand command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                command = new SqlCommand(daSQL, connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds);
+                rslt = true;
+            }
+            catch
+            {
+                rslt = false;
+            }
+            return rslt;
+        }
+
         public static string GetID(string sID)
         {
             string rtn = "";
