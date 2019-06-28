@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : TestMaker
+// Author           : m_c_w
+// Created          : 06-23-2019
+//
+// Last Modified By : m_c_w
+// Last Modified On : 06-27-2019
+// ***********************************************************************
+// <copyright file="Form1.cs" company="">
+//     Copyright ©  2019
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,18 +24,35 @@ using System.Windows.Forms;
 
 namespace TestMaker
 {
+    /// <summary>
+    /// Class Form1.
+    /// Implements the <see cref="System.Windows.Forms.Form" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Form1"/> class.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Load event of the Form1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void Form1_Load(object sender, EventArgs e)
         {
             FillTopics(1);
         }
 
+        /// <summary>
+        /// Fills the topics.
+        /// </summary>
+        /// <param name="iGrid">The i grid.</param>
         private void FillTopics(int iGrid)
         {
             DataSet ds = new DataSet();
@@ -51,6 +81,11 @@ namespace TestMaker
             }
         }
 
+        /// <summary>
+        /// Fills the sub topics.
+        /// </summary>
+        /// <param name="iGrid">The i grid.</param>
+        /// <param name="tID">The t identifier.</param>
         private void FillSubTopics(int iGrid, string tID)
         {
             switch (iGrid)
@@ -82,6 +117,11 @@ namespace TestMaker
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the BtnTopicTextClear control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void BtnTopicTextClear_Click(object sender, EventArgs e)
         {
             btnAddUpdateTopic.Text = "Add";
@@ -89,6 +129,11 @@ namespace TestMaker
             dgvTopics.ClearSelection();
         }
 
+        /// <summary>
+        /// Handles the Click event of the BtnAddUpdateTopic control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void BtnAddUpdateTopic_Click(object sender, EventArgs e)
         {
             switch (btnAddUpdateTopic.Text.ToUpper())
@@ -133,6 +178,11 @@ namespace TestMaker
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the BtnAddUpdateSubTopics control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void BtnAddUpdateSubTopics_Click(object sender, EventArgs e)
         {
             switch (btnAddUpdateSubTopics.Text.ToUpper())
@@ -177,6 +227,11 @@ namespace TestMaker
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the BtnSubTopicTextClear control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void BtnSubTopicTextClear_Click(object sender, EventArgs e)
         {
             btnAddUpdateSubTopics.Text = "Add";
@@ -186,6 +241,11 @@ namespace TestMaker
 
         }
 
+        /// <summary>
+        /// Handles the CellContentClick event of the DgvTopics control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
         private void DgvTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtTopic.Text = dgvTopics.CurrentRow.Cells[1].Value.ToString();
@@ -194,6 +254,11 @@ namespace TestMaker
             FillSubTopics(1, General.SelectedTopic);
         }
 
+        /// <summary>
+        /// Handles the CellContentClick event of the DgvSubTopics control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
         private void DgvSubTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtSubTopics.Text = dgvSubTopics.CurrentRow.Cells[2].Value.ToString();
