@@ -42,50 +42,50 @@
             this.btnAddUpdateTopic = new System.Windows.Forms.Button();
             this.lblTopics = new System.Windows.Forms.Label();
             this.tabPageQuestions = new System.Windows.Forms.TabPage();
-            this.tabPageTests = new System.Windows.Forms.TabPage();
-            this.dgv_Questions = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_Quest_Create = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbo_Quest_Type = new System.Windows.Forms.ComboBox();
-            this.rbtn_Quest_Diff_1 = new System.Windows.Forms.RadioButton();
-            this.rbtn_Quest_Diff_2 = new System.Windows.Forms.RadioButton();
-            this.rbtn_Quest_Diff_3 = new System.Windows.Forms.RadioButton();
-            this.rbtn_Quest_Diff_4 = new System.Windows.Forms.RadioButton();
-            this.rbtn_Quest_Diff_5 = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_Quest_Stem = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_Quest_Distractor_1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_Quest_Distractor_2 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txt_Quest_Distractor_3 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txt_Quest_Distractor_4 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_Quest_Distractor_5 = new System.Windows.Forms.TextBox();
-            this.btn_Quest_AddUpdate = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dgv_Quest_Topics = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_Quest_SubTopics = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dgv_Quest_Topics = new System.Windows.Forms.DataGridView();
+            this.btn_Quest_AddUpdate = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_Quest_Distractor_5 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_Quest_Distractor_4 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_Quest_Distractor_3 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_Quest_Distractor_2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_Quest_Distractor_1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_Quest_Stem = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rbtn_Quest_Diff_5 = new System.Windows.Forms.RadioButton();
+            this.rbtn_Quest_Diff_4 = new System.Windows.Forms.RadioButton();
+            this.rbtn_Quest_Diff_3 = new System.Windows.Forms.RadioButton();
+            this.rbtn_Quest_Diff_2 = new System.Windows.Forms.RadioButton();
+            this.rbtn_Quest_Diff_1 = new System.Windows.Forms.RadioButton();
+            this.cbo_Quest_Type = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btn_Quest_Create = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgv_Questions = new System.Windows.Forms.DataGridView();
+            this.tabPageTests = new System.Windows.Forms.TabPage();
             this.tabTest.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopics)).BeginInit();
             this.tabPageQuestions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_SubTopics)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_SubTopics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -148,7 +148,7 @@
             this.dgvSubTopics.Location = new System.Drawing.Point(489, 35);
             this.dgvSubTopics.Name = "dgvSubTopics";
             this.dgvSubTopics.ReadOnly = true;
-            this.dgvSubTopics.Size = new System.Drawing.Size(426, 383);
+            this.dgvSubTopics.Size = new System.Drawing.Size(426, 418);
             this.dgvSubTopics.TabIndex = 12;
             this.dgvSubTopics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSubTopics_CellContentClick);
             // 
@@ -160,13 +160,13 @@
             this.dgvTopics.Location = new System.Drawing.Point(26, 35);
             this.dgvTopics.Name = "dgvTopics";
             this.dgvTopics.ReadOnly = true;
-            this.dgvTopics.Size = new System.Drawing.Size(426, 383);
+            this.dgvTopics.Size = new System.Drawing.Size(426, 418);
             this.dgvTopics.TabIndex = 11;
             this.dgvTopics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTopics_CellContentClick);
             // 
             // btnSubTopicTextClear
             // 
-            this.btnSubTopicTextClear.Location = new System.Drawing.Point(802, 488);
+            this.btnSubTopicTextClear.Location = new System.Drawing.Point(802, 516);
             this.btnSubTopicTextClear.Name = "btnSubTopicTextClear";
             this.btnSubTopicTextClear.Size = new System.Drawing.Size(113, 23);
             this.btnSubTopicTextClear.TabIndex = 10;
@@ -176,7 +176,7 @@
             // 
             // btnTopicTextClear
             // 
-            this.btnTopicTextClear.Location = new System.Drawing.Point(339, 488);
+            this.btnTopicTextClear.Location = new System.Drawing.Point(339, 516);
             this.btnTopicTextClear.Name = "btnTopicTextClear";
             this.btnTopicTextClear.Size = new System.Drawing.Size(113, 23);
             this.btnTopicTextClear.TabIndex = 9;
@@ -186,14 +186,14 @@
             // 
             // txtSubTopics
             // 
-            this.txtSubTopics.Location = new System.Drawing.Point(489, 431);
+            this.txtSubTopics.Location = new System.Drawing.Point(489, 459);
             this.txtSubTopics.Name = "txtSubTopics";
             this.txtSubTopics.Size = new System.Drawing.Size(426, 22);
             this.txtSubTopics.TabIndex = 8;
             // 
             // btnAddUpdateSubTopics
             // 
-            this.btnAddUpdateSubTopics.Location = new System.Drawing.Point(802, 459);
+            this.btnAddUpdateSubTopics.Location = new System.Drawing.Point(802, 487);
             this.btnAddUpdateSubTopics.Name = "btnAddUpdateSubTopics";
             this.btnAddUpdateSubTopics.Size = new System.Drawing.Size(113, 23);
             this.btnAddUpdateSubTopics.TabIndex = 6;
@@ -203,14 +203,14 @@
             // 
             // txtTopic
             // 
-            this.txtTopic.Location = new System.Drawing.Point(26, 431);
+            this.txtTopic.Location = new System.Drawing.Point(26, 459);
             this.txtTopic.Name = "txtTopic";
             this.txtTopic.Size = new System.Drawing.Size(426, 22);
             this.txtTopic.TabIndex = 4;
             // 
             // btnAddUpdateTopic
             // 
-            this.btnAddUpdateTopic.Location = new System.Drawing.Point(339, 459);
+            this.btnAddUpdateTopic.Location = new System.Drawing.Point(339, 487);
             this.btnAddUpdateTopic.Name = "btnAddUpdateTopic";
             this.btnAddUpdateTopic.Size = new System.Drawing.Size(113, 23);
             this.btnAddUpdateTopic.TabIndex = 2;
@@ -267,256 +267,69 @@
             this.tabPageQuestions.Text = "Questions";
             this.tabPageQuestions.UseVisualStyleBackColor = true;
             // 
-            // tabPageTests
+            // groupBox1
             // 
-            this.tabPageTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageTests.Location = new System.Drawing.Point(4, 29);
-            this.tabPageTests.Name = "tabPageTests";
-            this.tabPageTests.Size = new System.Drawing.Size(939, 530);
-            this.tabPageTests.TabIndex = 2;
-            this.tabPageTests.Text = "Tests / Quizes";
-            this.tabPageTests.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.radioButton6);
+            this.groupBox1.Controls.Add(this.radioButton5);
+            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(841, 126);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(71, 368);
+            this.groupBox1.TabIndex = 38;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Answer";
             // 
-            // dgv_Questions
+            // radioButton6
             // 
-            this.dgv_Questions.AllowUserToAddRows = false;
-            this.dgv_Questions.AllowUserToDeleteRows = false;
-            this.dgv_Questions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Questions.Location = new System.Drawing.Point(18, 39);
-            this.dgv_Questions.Name = "dgv_Questions";
-            this.dgv_Questions.ReadOnly = true;
-            this.dgv_Questions.Size = new System.Drawing.Size(312, 103);
-            this.dgv_Questions.TabIndex = 0;
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(28, 338);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(14, 13);
+            this.radioButton6.TabIndex = 38;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // radioButton5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(179, 16);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Select a Question for Update";
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(28, 263);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(14, 13);
+            this.radioButton5.TabIndex = 37;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.UseVisualStyleBackColor = true;
             // 
-            // btn_Quest_Create
+            // radioButton4
             // 
-            this.btn_Quest_Create.Location = new System.Drawing.Point(18, 148);
-            this.btn_Quest_Create.Name = "btn_Quest_Create";
-            this.btn_Quest_Create.Size = new System.Drawing.Size(312, 23);
-            this.btn_Quest_Create.TabIndex = 6;
-            this.btn_Quest_Create.Text = "Create a New Question";
-            this.btn_Quest_Create.UseVisualStyleBackColor = true;
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(28, 193);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(14, 13);
+            this.radioButton4.TabIndex = 36;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // radioButton3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 462);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 16);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Question Type";
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(28, 117);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(14, 13);
+            this.radioButton3.TabIndex = 35;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // cbo_Quest_Type
+            // radioButton1
             // 
-            this.cbo_Quest_Type.FormattingEnabled = true;
-            this.cbo_Quest_Type.Location = new System.Drawing.Point(117, 459);
-            this.cbo_Quest_Type.Name = "cbo_Quest_Type";
-            this.cbo_Quest_Type.Size = new System.Drawing.Size(213, 24);
-            this.cbo_Quest_Type.TabIndex = 8;
-            // 
-            // rbtn_Quest_Diff_1
-            // 
-            this.rbtn_Quest_Diff_1.AutoSize = true;
-            this.rbtn_Quest_Diff_1.Location = new System.Drawing.Point(141, 501);
-            this.rbtn_Quest_Diff_1.Name = "rbtn_Quest_Diff_1";
-            this.rbtn_Quest_Diff_1.Size = new System.Drawing.Size(33, 20);
-            this.rbtn_Quest_Diff_1.TabIndex = 9;
-            this.rbtn_Quest_Diff_1.TabStop = true;
-            this.rbtn_Quest_Diff_1.Text = "1";
-            this.rbtn_Quest_Diff_1.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_Quest_Diff_2
-            // 
-            this.rbtn_Quest_Diff_2.AutoSize = true;
-            this.rbtn_Quest_Diff_2.Location = new System.Drawing.Point(180, 501);
-            this.rbtn_Quest_Diff_2.Name = "rbtn_Quest_Diff_2";
-            this.rbtn_Quest_Diff_2.Size = new System.Drawing.Size(33, 20);
-            this.rbtn_Quest_Diff_2.TabIndex = 10;
-            this.rbtn_Quest_Diff_2.TabStop = true;
-            this.rbtn_Quest_Diff_2.Text = "2";
-            this.rbtn_Quest_Diff_2.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_Quest_Diff_3
-            // 
-            this.rbtn_Quest_Diff_3.AutoSize = true;
-            this.rbtn_Quest_Diff_3.Location = new System.Drawing.Point(219, 501);
-            this.rbtn_Quest_Diff_3.Name = "rbtn_Quest_Diff_3";
-            this.rbtn_Quest_Diff_3.Size = new System.Drawing.Size(33, 20);
-            this.rbtn_Quest_Diff_3.TabIndex = 11;
-            this.rbtn_Quest_Diff_3.TabStop = true;
-            this.rbtn_Quest_Diff_3.Text = "3";
-            this.rbtn_Quest_Diff_3.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_Quest_Diff_4
-            // 
-            this.rbtn_Quest_Diff_4.AutoSize = true;
-            this.rbtn_Quest_Diff_4.Location = new System.Drawing.Point(258, 501);
-            this.rbtn_Quest_Diff_4.Name = "rbtn_Quest_Diff_4";
-            this.rbtn_Quest_Diff_4.Size = new System.Drawing.Size(33, 20);
-            this.rbtn_Quest_Diff_4.TabIndex = 12;
-            this.rbtn_Quest_Diff_4.TabStop = true;
-            this.rbtn_Quest_Diff_4.Text = "4";
-            this.rbtn_Quest_Diff_4.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_Quest_Diff_5
-            // 
-            this.rbtn_Quest_Diff_5.AutoSize = true;
-            this.rbtn_Quest_Diff_5.Location = new System.Drawing.Point(297, 501);
-            this.rbtn_Quest_Diff_5.Name = "rbtn_Quest_Diff_5";
-            this.rbtn_Quest_Diff_5.Size = new System.Drawing.Size(33, 20);
-            this.rbtn_Quest_Diff_5.TabIndex = 13;
-            this.rbtn_Quest_Diff_5.TabStop = true;
-            this.rbtn_Quest_Diff_5.Text = "5";
-            this.rbtn_Quest_Diff_5.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 501);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 16);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Question Difficulty";
-            // 
-            // txt_Quest_Stem
-            // 
-            this.txt_Quest_Stem.Location = new System.Drawing.Point(365, 39);
-            this.txt_Quest_Stem.Multiline = true;
-            this.txt_Quest_Stem.Name = "txt_Quest_Stem";
-            this.txt_Quest_Stem.Size = new System.Drawing.Size(452, 80);
-            this.txt_Quest_Stem.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(362, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 16);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Question Stem";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(362, 126);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 16);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Distractor 1";
-            // 
-            // txt_Quest_Distractor_1
-            // 
-            this.txt_Quest_Distractor_1.Location = new System.Drawing.Point(365, 145);
-            this.txt_Quest_Distractor_1.Multiline = true;
-            this.txt_Quest_Distractor_1.Name = "txt_Quest_Distractor_1";
-            this.txt_Quest_Distractor_1.Size = new System.Drawing.Size(452, 50);
-            this.txt_Quest_Distractor_1.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(362, 202);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 16);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Distractor 2";
-            // 
-            // txt_Quest_Distractor_2
-            // 
-            this.txt_Quest_Distractor_2.Location = new System.Drawing.Point(365, 221);
-            this.txt_Quest_Distractor_2.Multiline = true;
-            this.txt_Quest_Distractor_2.Name = "txt_Quest_Distractor_2";
-            this.txt_Quest_Distractor_2.Size = new System.Drawing.Size(452, 50);
-            this.txt_Quest_Distractor_2.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(362, 276);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 16);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Distractor 3";
-            // 
-            // txt_Quest_Distractor_3
-            // 
-            this.txt_Quest_Distractor_3.Location = new System.Drawing.Point(365, 295);
-            this.txt_Quest_Distractor_3.Multiline = true;
-            this.txt_Quest_Distractor_3.Name = "txt_Quest_Distractor_3";
-            this.txt_Quest_Distractor_3.Size = new System.Drawing.Size(452, 50);
-            this.txt_Quest_Distractor_3.TabIndex = 21;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(362, 351);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 16);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Distractor 4";
-            // 
-            // txt_Quest_Distractor_4
-            // 
-            this.txt_Quest_Distractor_4.Location = new System.Drawing.Point(365, 370);
-            this.txt_Quest_Distractor_4.Multiline = true;
-            this.txt_Quest_Distractor_4.Name = "txt_Quest_Distractor_4";
-            this.txt_Quest_Distractor_4.Size = new System.Drawing.Size(452, 50);
-            this.txt_Quest_Distractor_4.TabIndex = 23;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(362, 425);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 16);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "Distractor 5";
-            // 
-            // txt_Quest_Distractor_5
-            // 
-            this.txt_Quest_Distractor_5.Location = new System.Drawing.Point(365, 444);
-            this.txt_Quest_Distractor_5.Multiline = true;
-            this.txt_Quest_Distractor_5.Name = "txt_Quest_Distractor_5";
-            this.txt_Quest_Distractor_5.Size = new System.Drawing.Size(452, 50);
-            this.txt_Quest_Distractor_5.TabIndex = 25;
-            // 
-            // btn_Quest_AddUpdate
-            // 
-            this.btn_Quest_AddUpdate.Location = new System.Drawing.Point(847, 514);
-            this.btn_Quest_AddUpdate.Name = "btn_Quest_AddUpdate";
-            this.btn_Quest_AddUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btn_Quest_AddUpdate.TabIndex = 27;
-            this.btn_Quest_AddUpdate.Text = "Add";
-            this.btn_Quest_AddUpdate.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 183);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(190, 16);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "Select a Topic for the Question";
-            // 
-            // dgv_Quest_Topics
-            // 
-            this.dgv_Quest_Topics.AllowUserToAddRows = false;
-            this.dgv_Quest_Topics.AllowUserToDeleteRows = false;
-            this.dgv_Quest_Topics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Quest_Topics.Location = new System.Drawing.Point(18, 202);
-            this.dgv_Quest_Topics.Name = "dgv_Quest_Topics";
-            this.dgv_Quest_Topics.ReadOnly = true;
-            this.dgv_Quest_Topics.Size = new System.Drawing.Size(312, 103);
-            this.dgv_Quest_Topics.TabIndex = 28;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(28, 44);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 34;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -538,69 +351,256 @@
             this.dgv_Quest_SubTopics.Size = new System.Drawing.Size(312, 103);
             this.dgv_Quest_SubTopics.TabIndex = 30;
             // 
-            // groupBox1
+            // label14
             // 
-            this.groupBox1.Controls.Add(this.radioButton6);
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(841, 126);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(71, 368);
-            this.groupBox1.TabIndex = 38;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Answer";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(15, 183);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(190, 16);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Select a Topic for the Question";
             // 
-            // radioButton1
+            // dgv_Quest_Topics
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(28, 44);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 34;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.dgv_Quest_Topics.AllowUserToAddRows = false;
+            this.dgv_Quest_Topics.AllowUserToDeleteRows = false;
+            this.dgv_Quest_Topics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Quest_Topics.Location = new System.Drawing.Point(18, 202);
+            this.dgv_Quest_Topics.Name = "dgv_Quest_Topics";
+            this.dgv_Quest_Topics.ReadOnly = true;
+            this.dgv_Quest_Topics.Size = new System.Drawing.Size(312, 103);
+            this.dgv_Quest_Topics.TabIndex = 28;
             // 
-            // radioButton3
+            // btn_Quest_AddUpdate
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(28, 117);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(14, 13);
-            this.radioButton3.TabIndex = 35;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.btn_Quest_AddUpdate.Location = new System.Drawing.Point(847, 514);
+            this.btn_Quest_AddUpdate.Name = "btn_Quest_AddUpdate";
+            this.btn_Quest_AddUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btn_Quest_AddUpdate.TabIndex = 27;
+            this.btn_Quest_AddUpdate.Text = "Add";
+            this.btn_Quest_AddUpdate.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // label13
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(28, 193);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(14, 13);
-            this.radioButton4.TabIndex = 36;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(362, 425);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 16);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Distractor 5";
             // 
-            // radioButton5
+            // txt_Quest_Distractor_5
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(28, 263);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(14, 13);
-            this.radioButton5.TabIndex = 37;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.txt_Quest_Distractor_5.Location = new System.Drawing.Point(365, 444);
+            this.txt_Quest_Distractor_5.Multiline = true;
+            this.txt_Quest_Distractor_5.Name = "txt_Quest_Distractor_5";
+            this.txt_Quest_Distractor_5.Size = new System.Drawing.Size(452, 50);
+            this.txt_Quest_Distractor_5.TabIndex = 25;
             // 
-            // radioButton6
+            // label12
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(28, 338);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(14, 13);
-            this.radioButton6.TabIndex = 38;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(362, 351);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 16);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Distractor 4";
+            // 
+            // txt_Quest_Distractor_4
+            // 
+            this.txt_Quest_Distractor_4.Location = new System.Drawing.Point(365, 370);
+            this.txt_Quest_Distractor_4.Multiline = true;
+            this.txt_Quest_Distractor_4.Name = "txt_Quest_Distractor_4";
+            this.txt_Quest_Distractor_4.Size = new System.Drawing.Size(452, 50);
+            this.txt_Quest_Distractor_4.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(362, 276);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 16);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Distractor 3";
+            // 
+            // txt_Quest_Distractor_3
+            // 
+            this.txt_Quest_Distractor_3.Location = new System.Drawing.Point(365, 295);
+            this.txt_Quest_Distractor_3.Multiline = true;
+            this.txt_Quest_Distractor_3.Name = "txt_Quest_Distractor_3";
+            this.txt_Quest_Distractor_3.Size = new System.Drawing.Size(452, 50);
+            this.txt_Quest_Distractor_3.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(362, 202);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 16);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Distractor 2";
+            // 
+            // txt_Quest_Distractor_2
+            // 
+            this.txt_Quest_Distractor_2.Location = new System.Drawing.Point(365, 221);
+            this.txt_Quest_Distractor_2.Multiline = true;
+            this.txt_Quest_Distractor_2.Name = "txt_Quest_Distractor_2";
+            this.txt_Quest_Distractor_2.Size = new System.Drawing.Size(452, 50);
+            this.txt_Quest_Distractor_2.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(362, 126);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 16);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Distractor 1";
+            // 
+            // txt_Quest_Distractor_1
+            // 
+            this.txt_Quest_Distractor_1.Location = new System.Drawing.Point(365, 145);
+            this.txt_Quest_Distractor_1.Multiline = true;
+            this.txt_Quest_Distractor_1.Name = "txt_Quest_Distractor_1";
+            this.txt_Quest_Distractor_1.Size = new System.Drawing.Size(452, 50);
+            this.txt_Quest_Distractor_1.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(362, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 16);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Question Stem";
+            // 
+            // txt_Quest_Stem
+            // 
+            this.txt_Quest_Stem.Location = new System.Drawing.Point(365, 39);
+            this.txt_Quest_Stem.Multiline = true;
+            this.txt_Quest_Stem.Name = "txt_Quest_Stem";
+            this.txt_Quest_Stem.Size = new System.Drawing.Size(452, 80);
+            this.txt_Quest_Stem.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 501);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 16);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Question Difficulty";
+            // 
+            // rbtn_Quest_Diff_5
+            // 
+            this.rbtn_Quest_Diff_5.AutoSize = true;
+            this.rbtn_Quest_Diff_5.Location = new System.Drawing.Point(297, 501);
+            this.rbtn_Quest_Diff_5.Name = "rbtn_Quest_Diff_5";
+            this.rbtn_Quest_Diff_5.Size = new System.Drawing.Size(33, 20);
+            this.rbtn_Quest_Diff_5.TabIndex = 13;
+            this.rbtn_Quest_Diff_5.TabStop = true;
+            this.rbtn_Quest_Diff_5.Text = "5";
+            this.rbtn_Quest_Diff_5.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_Quest_Diff_4
+            // 
+            this.rbtn_Quest_Diff_4.AutoSize = true;
+            this.rbtn_Quest_Diff_4.Location = new System.Drawing.Point(258, 501);
+            this.rbtn_Quest_Diff_4.Name = "rbtn_Quest_Diff_4";
+            this.rbtn_Quest_Diff_4.Size = new System.Drawing.Size(33, 20);
+            this.rbtn_Quest_Diff_4.TabIndex = 12;
+            this.rbtn_Quest_Diff_4.TabStop = true;
+            this.rbtn_Quest_Diff_4.Text = "4";
+            this.rbtn_Quest_Diff_4.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_Quest_Diff_3
+            // 
+            this.rbtn_Quest_Diff_3.AutoSize = true;
+            this.rbtn_Quest_Diff_3.Location = new System.Drawing.Point(219, 501);
+            this.rbtn_Quest_Diff_3.Name = "rbtn_Quest_Diff_3";
+            this.rbtn_Quest_Diff_3.Size = new System.Drawing.Size(33, 20);
+            this.rbtn_Quest_Diff_3.TabIndex = 11;
+            this.rbtn_Quest_Diff_3.TabStop = true;
+            this.rbtn_Quest_Diff_3.Text = "3";
+            this.rbtn_Quest_Diff_3.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_Quest_Diff_2
+            // 
+            this.rbtn_Quest_Diff_2.AutoSize = true;
+            this.rbtn_Quest_Diff_2.Location = new System.Drawing.Point(180, 501);
+            this.rbtn_Quest_Diff_2.Name = "rbtn_Quest_Diff_2";
+            this.rbtn_Quest_Diff_2.Size = new System.Drawing.Size(33, 20);
+            this.rbtn_Quest_Diff_2.TabIndex = 10;
+            this.rbtn_Quest_Diff_2.TabStop = true;
+            this.rbtn_Quest_Diff_2.Text = "2";
+            this.rbtn_Quest_Diff_2.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_Quest_Diff_1
+            // 
+            this.rbtn_Quest_Diff_1.AutoSize = true;
+            this.rbtn_Quest_Diff_1.Location = new System.Drawing.Point(141, 501);
+            this.rbtn_Quest_Diff_1.Name = "rbtn_Quest_Diff_1";
+            this.rbtn_Quest_Diff_1.Size = new System.Drawing.Size(33, 20);
+            this.rbtn_Quest_Diff_1.TabIndex = 9;
+            this.rbtn_Quest_Diff_1.TabStop = true;
+            this.rbtn_Quest_Diff_1.Text = "1";
+            this.rbtn_Quest_Diff_1.UseVisualStyleBackColor = true;
+            // 
+            // cbo_Quest_Type
+            // 
+            this.cbo_Quest_Type.FormattingEnabled = true;
+            this.cbo_Quest_Type.Location = new System.Drawing.Point(117, 459);
+            this.cbo_Quest_Type.Name = "cbo_Quest_Type";
+            this.cbo_Quest_Type.Size = new System.Drawing.Size(213, 24);
+            this.cbo_Quest_Type.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 462);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 16);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Question Type";
+            // 
+            // btn_Quest_Create
+            // 
+            this.btn_Quest_Create.Location = new System.Drawing.Point(18, 148);
+            this.btn_Quest_Create.Name = "btn_Quest_Create";
+            this.btn_Quest_Create.Size = new System.Drawing.Size(312, 23);
+            this.btn_Quest_Create.TabIndex = 6;
+            this.btn_Quest_Create.Text = "Create a New Question";
+            this.btn_Quest_Create.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 16);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Select a Question for Update";
+            // 
+            // dgv_Questions
+            // 
+            this.dgv_Questions.AllowUserToAddRows = false;
+            this.dgv_Questions.AllowUserToDeleteRows = false;
+            this.dgv_Questions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Questions.Location = new System.Drawing.Point(18, 39);
+            this.dgv_Questions.Name = "dgv_Questions";
+            this.dgv_Questions.ReadOnly = true;
+            this.dgv_Questions.Size = new System.Drawing.Size(312, 103);
+            this.dgv_Questions.TabIndex = 0;
+            // 
+            // tabPageTests
+            // 
+            this.tabPageTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageTests.Location = new System.Drawing.Point(4, 29);
+            this.tabPageTests.Name = "tabPageTests";
+            this.tabPageTests.Size = new System.Drawing.Size(939, 556);
+            this.tabPageTests.TabIndex = 2;
+            this.tabPageTests.Text = "Tests / Quizes";
+            this.tabPageTests.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -621,11 +621,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopics)).EndInit();
             this.tabPageQuestions.ResumeLayout(false);
             this.tabPageQuestions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_SubTopics)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_SubTopics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

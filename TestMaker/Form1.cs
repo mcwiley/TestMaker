@@ -136,11 +136,12 @@ namespace TestMaker
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void BtnAddUpdateTopic_Click(object sender, EventArgs e)
         {
+            bool result = false;
             switch (btnAddUpdateTopic.Text.ToUpper())
             {
                 case "ADD":
                     string addTopic = "Insert into dbo.Topics Values ('" + txtTopic.Text + "')";
-                    bool result = General.AddUpdate(addTopic);
+                    result = General.AddUpdate(addTopic);
                     if (result == false)
                     {
                         MessageBox.Show("There was a problem Adding the new Topic!", "Problem Adding", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -158,8 +159,8 @@ namespace TestMaker
                 case "UPDATE":
                     string topID = dgvTopics.CurrentRow.Cells[0].Value.ToString();
                     string updTopic = "Update dbo.Topics Set TopicName = '" + txtTopic.Text + "' Where TopicID = " + topID;
-                    bool resultb = General.AddUpdate(updTopic);
-                    if (resultb == false)
+                    result = General.AddUpdate(updTopic);
+                    if (result == false)
                     {
                         MessageBox.Show("There was a problem Updating the Topic!", "Problem Updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -185,11 +186,12 @@ namespace TestMaker
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void BtnAddUpdateSubTopics_Click(object sender, EventArgs e)
         {
+            bool result = false;
             switch (btnAddUpdateSubTopics.Text.ToUpper())
             {
                 case "ADD":
                     string sqlTopic = "Insert into dbo.SubTopics Values (" + dgvTopics.CurrentRow.Cells[0].Value.ToString() + ", '" + txtSubTopics.Text + "')";
-                    bool result = General.AddUpdate(sqlTopic);
+                    result = General.AddUpdate(sqlTopic);
                     if (result == false)
                     {
                         MessageBox.Show("There was a problem Adding the new SubTopic!", "Problem Adding", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -200,16 +202,16 @@ namespace TestMaker
                         txtSubTopics.Text = "";
                         btnAddUpdateSubTopics.Text = "Add";
                         dgvSubTopics.DataSource = null;
-                        FillSubTopics(2, dgvTopics.CurrentRow.Cells[0].Value.ToString());
+                        FillSubTopics(1, dgvTopics.CurrentRow.Cells[0].Value.ToString());
                         MessageBox.Show("SubTopic Added!", "SubTopic Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
 
                 case "UPDATE":
-                    string subtopID = dgvSubTopics.CurrentRow.Cells[0].Value.ToString();
-                    string updTopic = "Update dbo.SubTopics Set SubTopicName = '" + txtSubTopics.Text + "' Where SubTopicID = " + subtopID;
-                    bool resultb = General.AddUpdate(updTopic);
-                    if (resultb == false)
+                    General.TS_SelectedSubTopic = dgvSubTopics.CurrentRow.Cells[0].Value.ToString();
+                    string updTopic = "Update dbo.SubTopics Set SubTopicName = '" + txtSubTopics.Text + "' Where SubTopicID = " + General.TS_SelectedSubTopic;
+                    result = General.AddUpdate(updTopic);
+                    if (result == false)
                     {
                         MessageBox.Show("There was a problem Updating the SubTopic!", "Problem Updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -249,9 +251,9 @@ namespace TestMaker
         private void DgvTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtTopic.Text = dgvTopics.CurrentRow.Cells[1].Value.ToString();
-            General.SelectedTopic = dgvTopics.CurrentRow.Cells[0].Value.ToString();
+            General.TS_SelectedTopic = dgvTopics.CurrentRow.Cells[0].Value.ToString();
             btnAddUpdateTopic.Text = "Update";
-            FillSubTopics(1, General.SelectedTopic);
+            FillSubTopics(1, General.TS_SelectedTopic);
         }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace TestMaker
             return rtn;
         }
 
-        public static string SelectedTopic;
-        public static string SelectedSubTopic;
+        public static string TS_SelectedTopic;
+        public static string TS_SelectedSubTopic;
 
         public static string myDBConn = "Server=DESKTOP-BSFRLSL;Database=TestDB;Trusted_Connection=True;";
 
