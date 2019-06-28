@@ -70,13 +70,13 @@ namespace TestMaker
                     dgvTopics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     break;
                 case 2:
-                    //dgv_Quest_Topics.DataSource = ds;
-                    //dgv_Quest_Topics.DataMember = "Data_Table";
-                    //dgv_Quest_Topics.RowHeadersVisible = false;
-                    //dgv_Quest_Topics.Columns[0].Visible = false;
-                    //dgv_Quest_Topics.Columns[1].HeaderText = "Topic Name";
-                    //dgv_Quest_Topics.Columns[1].Width = 400;
-                    //dgv_Quest_Topics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    dgv_Quest_Topics.DataSource = ds;
+                    dgv_Quest_Topics.DataMember = "Data_Table";
+                    dgv_Quest_Topics.RowHeadersVisible = false;
+                    dgv_Quest_Topics.Columns[0].Visible = false;
+                    dgv_Quest_Topics.Columns[1].HeaderText = "Topic Name";
+                    dgv_Quest_Topics.Columns[1].Width = 400;
+                    dgv_Quest_Topics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     break;
             }
         }
@@ -265,6 +265,22 @@ namespace TestMaker
         {
             txtSubTopics.Text = dgvSubTopics.CurrentRow.Cells[2].Value.ToString();
             btnAddUpdateSubTopics.Text = "Update";
+        }
+
+        /// <summary>Handles the Click event of the TabTest control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void TabTest_Click(object sender, EventArgs e)
+        {
+            switch (tabTest.SelectedIndex)
+            {
+                case 0:
+                case 2:
+                    break;
+                case 1:
+                    FillTopics(2); // fill the topics
+                    break;
+            }
         }
     }
 

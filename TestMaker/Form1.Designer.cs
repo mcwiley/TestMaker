@@ -109,6 +109,7 @@
             this.tabTest.SelectedIndex = 0;
             this.tabTest.Size = new System.Drawing.Size(947, 589);
             this.tabTest.TabIndex = 1;
+            this.tabTest.Click += new System.EventHandler(this.TabTest_Click);
             // 
             // tabPageTopics
             // 
