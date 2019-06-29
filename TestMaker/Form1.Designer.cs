@@ -73,7 +73,6 @@
             this.rbtn_Quest_Diff_1 = new System.Windows.Forms.RadioButton();
             this.cbo_Quest_Type = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_Quest_Create = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Questions = new System.Windows.Forms.DataGridView();
             this.tabPageTests = new System.Windows.Forms.TabPage();
@@ -256,7 +255,6 @@
             this.tabPageQuestions.Controls.Add(this.rbtn_Quest_Diff_1);
             this.tabPageQuestions.Controls.Add(this.cbo_Quest_Type);
             this.tabPageQuestions.Controls.Add(this.label6);
-            this.tabPageQuestions.Controls.Add(this.btn_Quest_Create);
             this.tabPageQuestions.Controls.Add(this.label5);
             this.tabPageQuestions.Controls.Add(this.dgv_Questions);
             this.tabPageQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -349,7 +347,7 @@
             this.dgv_Quest_SubTopics.Location = new System.Drawing.Point(18, 338);
             this.dgv_Quest_SubTopics.Name = "dgv_Quest_SubTopics";
             this.dgv_Quest_SubTopics.ReadOnly = true;
-            this.dgv_Quest_SubTopics.Size = new System.Drawing.Size(312, 103);
+            this.dgv_Quest_SubTopics.Size = new System.Drawing.Size(312, 110);
             this.dgv_Quest_SubTopics.TabIndex = 30;
             // 
             // label14
@@ -369,8 +367,9 @@
             this.dgv_Quest_Topics.Location = new System.Drawing.Point(18, 202);
             this.dgv_Quest_Topics.Name = "dgv_Quest_Topics";
             this.dgv_Quest_Topics.ReadOnly = true;
-            this.dgv_Quest_Topics.Size = new System.Drawing.Size(312, 103);
+            this.dgv_Quest_Topics.Size = new System.Drawing.Size(312, 110);
             this.dgv_Quest_Topics.TabIndex = 28;
+            this.dgv_Quest_Topics.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Quest_Topics_CellContentClick);
             // 
             // btn_Quest_AddUpdate
             // 
@@ -486,7 +485,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 501);
+            this.label7.Location = new System.Drawing.Point(16, 514);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 16);
             this.label7.TabIndex = 14;
@@ -495,7 +494,7 @@
             // rbtn_Quest_Diff_5
             // 
             this.rbtn_Quest_Diff_5.AutoSize = true;
-            this.rbtn_Quest_Diff_5.Location = new System.Drawing.Point(297, 501);
+            this.rbtn_Quest_Diff_5.Location = new System.Drawing.Point(298, 514);
             this.rbtn_Quest_Diff_5.Name = "rbtn_Quest_Diff_5";
             this.rbtn_Quest_Diff_5.Size = new System.Drawing.Size(33, 20);
             this.rbtn_Quest_Diff_5.TabIndex = 13;
@@ -506,7 +505,7 @@
             // rbtn_Quest_Diff_4
             // 
             this.rbtn_Quest_Diff_4.AutoSize = true;
-            this.rbtn_Quest_Diff_4.Location = new System.Drawing.Point(258, 501);
+            this.rbtn_Quest_Diff_4.Location = new System.Drawing.Point(259, 514);
             this.rbtn_Quest_Diff_4.Name = "rbtn_Quest_Diff_4";
             this.rbtn_Quest_Diff_4.Size = new System.Drawing.Size(33, 20);
             this.rbtn_Quest_Diff_4.TabIndex = 12;
@@ -517,7 +516,7 @@
             // rbtn_Quest_Diff_3
             // 
             this.rbtn_Quest_Diff_3.AutoSize = true;
-            this.rbtn_Quest_Diff_3.Location = new System.Drawing.Point(219, 501);
+            this.rbtn_Quest_Diff_3.Location = new System.Drawing.Point(220, 514);
             this.rbtn_Quest_Diff_3.Name = "rbtn_Quest_Diff_3";
             this.rbtn_Quest_Diff_3.Size = new System.Drawing.Size(33, 20);
             this.rbtn_Quest_Diff_3.TabIndex = 11;
@@ -528,7 +527,7 @@
             // rbtn_Quest_Diff_2
             // 
             this.rbtn_Quest_Diff_2.AutoSize = true;
-            this.rbtn_Quest_Diff_2.Location = new System.Drawing.Point(180, 501);
+            this.rbtn_Quest_Diff_2.Location = new System.Drawing.Point(181, 514);
             this.rbtn_Quest_Diff_2.Name = "rbtn_Quest_Diff_2";
             this.rbtn_Quest_Diff_2.Size = new System.Drawing.Size(33, 20);
             this.rbtn_Quest_Diff_2.TabIndex = 10;
@@ -539,7 +538,7 @@
             // rbtn_Quest_Diff_1
             // 
             this.rbtn_Quest_Diff_1.AutoSize = true;
-            this.rbtn_Quest_Diff_1.Location = new System.Drawing.Point(141, 501);
+            this.rbtn_Quest_Diff_1.Location = new System.Drawing.Point(142, 514);
             this.rbtn_Quest_Diff_1.Name = "rbtn_Quest_Diff_1";
             this.rbtn_Quest_Diff_1.Size = new System.Drawing.Size(33, 20);
             this.rbtn_Quest_Diff_1.TabIndex = 9;
@@ -550,7 +549,12 @@
             // cbo_Quest_Type
             // 
             this.cbo_Quest_Type.FormattingEnabled = true;
-            this.cbo_Quest_Type.Location = new System.Drawing.Point(117, 459);
+            this.cbo_Quest_Type.Items.AddRange(new object[] {
+            "Multiple Choice",
+            "Fill-in the Blank",
+            "True / False",
+            "Essay"});
+            this.cbo_Quest_Type.Location = new System.Drawing.Point(117, 470);
             this.cbo_Quest_Type.Name = "cbo_Quest_Type";
             this.cbo_Quest_Type.Size = new System.Drawing.Size(213, 24);
             this.cbo_Quest_Type.TabIndex = 8;
@@ -558,20 +562,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 462);
+            this.label6.Location = new System.Drawing.Point(15, 473);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 16);
             this.label6.TabIndex = 7;
             this.label6.Text = "Question Type";
-            // 
-            // btn_Quest_Create
-            // 
-            this.btn_Quest_Create.Location = new System.Drawing.Point(18, 148);
-            this.btn_Quest_Create.Name = "btn_Quest_Create";
-            this.btn_Quest_Create.Size = new System.Drawing.Size(312, 23);
-            this.btn_Quest_Create.TabIndex = 6;
-            this.btn_Quest_Create.Text = "Create a New Question";
-            this.btn_Quest_Create.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -590,8 +585,9 @@
             this.dgv_Questions.Location = new System.Drawing.Point(18, 39);
             this.dgv_Questions.Name = "dgv_Questions";
             this.dgv_Questions.ReadOnly = true;
-            this.dgv_Questions.Size = new System.Drawing.Size(312, 103);
+            this.dgv_Questions.Size = new System.Drawing.Size(312, 136);
             this.dgv_Questions.TabIndex = 0;
+            this.dgv_Questions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Questions_CellContentClick);
             // 
             // tabPageTests
             // 
@@ -670,7 +666,6 @@
         private System.Windows.Forms.RadioButton rbtn_Quest_Diff_1;
         private System.Windows.Forms.ComboBox cbo_Quest_Type;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btn_Quest_Create;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgv_Questions;
         private System.Windows.Forms.Label label3;

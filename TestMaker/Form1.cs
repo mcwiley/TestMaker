@@ -103,16 +103,16 @@ namespace TestMaker
                     dgvSubTopics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     break;
                 case 2:
-                    //DataSet dsub2 = new DataSet();
-                    //dsub2 = General.GetData("select SubTopicID as subID, TopicID as topID,SubTopicName as subName from SubTopics where TopicID = " + tID);
-                    //dgv_Quest_SubTopics.DataSource = dsub2;
-                    //dgv_Quest_SubTopics.DataMember = "Data_Table";
-                    //dgv_Quest_SubTopics.RowHeadersVisible = false;
-                    //dgv_Quest_SubTopics.Columns[0].Visible = false;
-                    //dgv_Quest_SubTopics.Columns[1].Visible = false;
-                    //dgv_Quest_SubTopics.Columns[2].HeaderText = "SubTopic Name";
-                    //dgv_Quest_SubTopics.Columns[2].Width = 400;
-                    //dgv_Quest_SubTopics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    DataSet dsub2 = new DataSet();
+                    dsub2 = General.GetData("select SubTopicID as subID, TopicID as topID,SubTopicName as subName from SubTopics where TopicID = " + tID);
+                    dgv_Quest_SubTopics.DataSource = dsub2;
+                    dgv_Quest_SubTopics.DataMember = "Data_Table";
+                    dgv_Quest_SubTopics.RowHeadersVisible = false;
+                    dgv_Quest_SubTopics.Columns[0].Visible = false;
+                    dgv_Quest_SubTopics.Columns[1].Visible = false;
+                    dgv_Quest_SubTopics.Columns[2].HeaderText = "SubTopic Name";
+                    dgv_Quest_SubTopics.Columns[2].Width = 400;
+                    dgv_Quest_SubTopics.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     break;
             }
         }
@@ -281,6 +281,25 @@ namespace TestMaker
                     FillTopics(2); // fill the topics
                     break;
             }
+        }
+
+        /// <summary>Handles the CellContentClick event of the Dgv_Questions control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
+        private void Dgv_Questions_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        /// <summary>Handles the CellContentClick event of the Dgv_Quest_Topics control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
+        private void Dgv_Quest_Topics_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //txtTopic.Text = dgvTopics.CurrentRow.Cells[1].Value.ToString();
+            General.QTS_SelectedTopic = dgv_Quest_Topics.CurrentRow.Cells[0].Value.ToString();
+            //btnAddUpdateTopic.Text = "Update";
+            FillSubTopics(2, General.QTS_SelectedTopic);
         }
     }
 
