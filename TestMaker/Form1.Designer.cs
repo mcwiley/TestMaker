@@ -42,6 +42,7 @@
             this.btnAddUpdateTopic = new System.Windows.Forms.Button();
             this.lblTopics = new System.Windows.Forms.Label();
             this.tabPageQuestions = new System.Windows.Forms.TabPage();
+            this.btn_Quest_Clear = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbtn_Quest_Answer_5 = new System.Windows.Forms.RadioButton();
             this.rbtn_Quest_Answer_4 = new System.Windows.Forms.RadioButton();
@@ -76,7 +77,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Questions = new System.Windows.Forms.DataGridView();
             this.tabPageTests = new System.Windows.Forms.TabPage();
-            this.btn_Quest_Clear = new System.Windows.Forms.Button();
             this.tabTest.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).BeginInit();
@@ -267,6 +267,16 @@
             this.tabPageQuestions.TabIndex = 1;
             this.tabPageQuestions.Text = "Questions";
             this.tabPageQuestions.UseVisualStyleBackColor = true;
+            // 
+            // btn_Quest_Clear
+            // 
+            this.btn_Quest_Clear.Location = new System.Drawing.Point(742, 514);
+            this.btn_Quest_Clear.Name = "btn_Quest_Clear";
+            this.btn_Quest_Clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_Quest_Clear.TabIndex = 39;
+            this.btn_Quest_Clear.Text = "Clear";
+            this.btn_Quest_Clear.UseVisualStyleBackColor = true;
+            this.btn_Quest_Clear.Click += new System.EventHandler(this.Btn_Quest_Clear_Click);
             // 
             // groupBox1
             // 
@@ -590,7 +600,7 @@
             this.dgv_Questions.ReadOnly = true;
             this.dgv_Questions.Size = new System.Drawing.Size(312, 136);
             this.dgv_Questions.TabIndex = 0;
-            this.dgv_Questions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Questions_CellContentClick);
+            this.dgv_Questions.Click += new System.EventHandler(this.Dgv_Questions_Click);
             // 
             // tabPageTests
             // 
@@ -601,16 +611,6 @@
             this.tabPageTests.TabIndex = 2;
             this.tabPageTests.Text = "Tests / Quizes";
             this.tabPageTests.UseVisualStyleBackColor = true;
-            // 
-            // btn_Quest_Clear
-            // 
-            this.btn_Quest_Clear.Location = new System.Drawing.Point(742, 514);
-            this.btn_Quest_Clear.Name = "btn_Quest_Clear";
-            this.btn_Quest_Clear.Size = new System.Drawing.Size(75, 23);
-            this.btn_Quest_Clear.TabIndex = 39;
-            this.btn_Quest_Clear.Text = "Clear";
-            this.btn_Quest_Clear.UseVisualStyleBackColor = true;
-            this.btn_Quest_Clear.Click += new System.EventHandler(this.Btn_Quest_Clear_Click);
             // 
             // Form1
             // 

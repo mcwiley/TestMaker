@@ -117,6 +117,7 @@ namespace TestMaker
             }
         }
 
+        /// <summary>Fills the questions.</summary>
         private void FillQuestions()
         {
             dgv_Questions.DataSource = null;
@@ -302,55 +303,6 @@ namespace TestMaker
         // Questions
         // ------------------------------------------------------------------------------
 
-        /// <summary>Handles the CellContentClick event of the Dgv_Questions control.</summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
-        private void Dgv_Questions_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            General.QTS_SelectedQuestion = dgv_Questions.CurrentRow.Cells[2].Value.ToString();
-
-            string QuestSQL = "SELECT [Quest_ID] " +
-                              ",[Quest_Topic] " +
-                              ",[Quest_SubTopic] " +
-                              ",[Quest_Type] " +
-                              ",[Quest_Difficulty] " +
-                              ",[Quest_Stem] " +
-                              ",[Quest_Distractor_A] " +
-                              ",[Quest_Distractor_B] " +
-                              ",[Quest_Distractor_C] " +
-                              ",[Quest_Distractor_D] " +
-                              ",[Quest_Distractor_E] " +
-                              ",[Quest_Answer] " +
-                              "  FROM[TestDB].[dbo].[Questions] " +
-                              "  WHERE [Quest_ID] = " + General.QTS_SelectedQuestion;
-
-            DataSet GetQuestDS = new DataSet();
-            GetQuestDS = General.GetData(QuestSQL)
-
-            cbo_Quest_Type.SelectedIndex = -1;
-
-            rbtn_Quest_Diff_1.Checked = false;
-            rbtn_Quest_Diff_2.Checked = false;
-            rbtn_Quest_Diff_3.Checked = false;
-            rbtn_Quest_Diff_4.Checked = false;
-            rbtn_Quest_Diff_5.Checked = false;
-
-            txt_Quest_Stem.Text = "";
-
-            txt_Quest_Distractor_1.Text = "";
-            txt_Quest_Distractor_2.Text = "";
-            txt_Quest_Distractor_3.Text = "";
-            txt_Quest_Distractor_4.Text = "";
-            txt_Quest_Distractor_5.Text = "";
-
-            rbtn_Quest_Answer_1.Checked = false;
-            rbtn_Quest_Answer_2.Checked = false;
-            rbtn_Quest_Answer_3.Checked = false;
-            rbtn_Quest_Answer_4.Checked = false;
-            rbtn_Quest_Answer_5.Checked = false;
-
-        }
-
         /// <summary>Handles the CellContentClick event of the Dgv_Quest_Topics control.</summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
@@ -360,6 +312,7 @@ namespace TestMaker
             FillSubTopics(2, General.QTS_SelectedTopic);
         }
 
+        /// <summary>Clears the question.</summary>
         private void ClearQuestion()
         {
             dgv_Questions.DataSource = null;
@@ -398,6 +351,9 @@ namespace TestMaker
             ClearQuestion();
         }
 
+        /// <summary>Handles the Click event of the Btn_Quest_AddUpdate control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void Btn_Quest_AddUpdate_Click(object sender, EventArgs e)
         {
             if(btn_Quest_AddUpdate.Text == "Add")
@@ -421,7 +377,7 @@ namespace TestMaker
                 string sQstAdd = "insert into dbo.Questions values (" +
                     dgv_Quest_Topics.CurrentRow.Cells[0].Value.ToString() + ", " +
                     dgv_Quest_SubTopics.CurrentRow.Cells[0].Value.ToString() + ", " +
-                    (cbo_Quest_Type.SelectedIndex + 1).ToString() + ", " +
+                    (cbo_Quest_Type.SelectedIndex).ToString() + ", " +
                     iQstDiff.ToString() + ", " +
                     "'" + txt_Quest_Stem.Text + "', " +
                     "'" + txt_Quest_Distractor_1.Text + "', " +
@@ -466,7 +422,7 @@ namespace TestMaker
                 if (rbtn_Quest_Answer_5.Checked) { iQstAns = 5; }
 
                 string sQstUpd = "Update dbo.Questions Set" +
-                                " Quest_Type = " + (cbo_Quest_Type.SelectedIndex + 1).ToString() + "," +
+                                " Quest_Type = " + (cbo_Quest_Type.SelectedIndex).ToString() + "," +
                                 " Quest_Difficulty = " + iQstDiff.ToString() + "," +
                                 " Quest_Stem = '" + txt_Quest_Stem.Text + "'," +
                                 " Quest_Distractor_A = '" + txt_Quest_Distractor_1.Text + "'," +
@@ -489,10 +445,102 @@ namespace TestMaker
                     FillQuestions();
                     ClearQuestion();
                     MessageBox.Show("Question Updated!", "Question Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
 
 
+        }
+
+        /// <summary>Handles the Click event of the Dgv_Questions control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void Dgv_Questions_Click(object sender, EventArgs e)
+        {
+            General.QTS_SelectedQuestion = dgv_Questions.CurrentRow.Cells[2].Value.ToString();
+
+            string QuestSQL = "SELECT [Quest_ID] " +
+                              ",[Quest_Topic] " +
+                              ",[Quest_SubTopic] " +
+                              ",[Quest_Type] " +
+                              ",[Quest_Difficulty] " +
+                              ",[Quest_Stem] " +
+                              ",[Quest_Distractor_A] " +
+                              ",[Quest_Distractor_B] " +
+                              ",[Quest_Distractor_C] " +
+                              ",[Quest_Distractor_D] " +
+                              ",[Quest_Distractor_E] " +
+                              ",[Quest_Answer] " +
+                              "  FROM [TestDB].[dbo].[Questions] " +
+                              "  WHERE [Quest_ID] = " + General.QTS_SelectedQuestion;
+
+            DataSet GetQuestDS = new DataSet();
+            GetQuestDS = General.GetData(QuestSQL);
+
+            int QID = Convert.ToInt32(GetQuestDS.Tables[0].Rows[0]["Quest_ID"].ToString());
+            int QTopic = Convert.ToInt32(GetQuestDS.Tables[0].Rows[0]["Quest_Topic"].ToString());
+            int QSubTopic = Convert.ToInt32(GetQuestDS.Tables[0].Rows[0]["Quest_SubTopic"].ToString());
+            int QType = Convert.ToInt32(GetQuestDS.Tables[0].Rows[0]["Quest_Type"].ToString());
+            int QDifficulty = Convert.ToInt32(GetQuestDS.Tables[0].Rows[0]["Quest_Difficulty"].ToString());
+            string QStem = GetQuestDS.Tables[0].Rows[0]["Quest_Stem"].ToString();
+            string QDistractorA = GetQuestDS.Tables[0].Rows[0]["Quest_Distractor_A"].ToString();
+            string QDistractorB = GetQuestDS.Tables[0].Rows[0]["Quest_Distractor_B"].ToString();
+            string QDistractorC = GetQuestDS.Tables[0].Rows[0]["Quest_Distractor_C"].ToString();
+            string QDistractorD = GetQuestDS.Tables[0].Rows[0]["Quest_Distractor_D"].ToString();
+            string QDistractorE = GetQuestDS.Tables[0].Rows[0]["Quest_Distractor_E"].ToString();
+            int QAnswer = Convert.ToInt32(GetQuestDS.Tables[0].Rows[0]["Quest_Answer"].ToString());
+
+
+
+            cbo_Quest_Type.SelectedIndex = QType;
+
+            switch (QDifficulty)
+            {
+                case 1:
+                    rbtn_Quest_Diff_1.Checked = true;
+                    break;
+                case 2:
+                    rbtn_Quest_Diff_2.Checked = true;
+                    break;
+                case 3:
+                    rbtn_Quest_Diff_3.Checked = true;
+                    break;
+                case 4:
+                    rbtn_Quest_Diff_4.Checked = true;
+                    break;
+                case 5:
+                    rbtn_Quest_Diff_5.Checked = true;
+                    break;
+            }
+
+            txt_Quest_Stem.Text = QStem;
+
+            txt_Quest_Distractor_1.Text = QDistractorA;
+            txt_Quest_Distractor_2.Text = QDistractorB;
+            txt_Quest_Distractor_3.Text = QDistractorC;
+            txt_Quest_Distractor_4.Text = QDistractorD;
+            txt_Quest_Distractor_5.Text = QDistractorE;
+
+            switch (QAnswer)
+            {
+                case 1:
+                    rbtn_Quest_Answer_1.Checked = true;
+                    break;
+                case 2:
+                    rbtn_Quest_Answer_2.Checked = true;
+                    break;
+                case 3:
+                    rbtn_Quest_Answer_3.Checked = true;
+                    break;
+                case 4:
+                    rbtn_Quest_Answer_4.Checked = true;
+                    break;
+                case 5:
+                    rbtn_Quest_Answer_5.Checked = true;
+                    break;
+            }
+
+            btn_Quest_AddUpdate.Text = "Update";
         }
     }
 
