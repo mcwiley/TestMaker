@@ -117,6 +117,19 @@ namespace TestMaker
             }
         }
 
+        private void FillQuestions()
+        {
+            dgv_Questions.DataSource = null;
+            DataSet dsQST = new DataSet();
+            dsQST = General.GetData("Select Quest_Topic, Quest_SubTopic, Quest_ID From Questions Order By Quest_Topic, Quest_SubTopic, Quest_ID");
+            dgv_Questions.DataSource = dsQST;
+            dgv_Questions.DataMember = "Data_Table";
+            dgv_Questions.RowHeadersVisible = false;
+            dgv_Questions.Columns[0].HeaderText = "Topic ID";
+            dgv_Questions.Columns[1].HeaderText = "SubTopic ID";
+            dgv_Questions.Columns[2].HeaderText = "Question ID";
+            dgv_Questions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
         /// <summary>
         /// Handles the Click event of the BtnTopicTextClear control.
         /// </summary>
@@ -278,16 +291,63 @@ namespace TestMaker
                 case 2:
                     break;
                 case 1:
+                    FillQuestions();
                     FillTopics(2); // fill the topics
                     break;
             }
         }
+
+
+        // ------------------------------------------------------------------------------
+        // Questions
+        // ------------------------------------------------------------------------------
 
         /// <summary>Handles the CellContentClick event of the Dgv_Questions control.</summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
         private void Dgv_Questions_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            General.QTS_SelectedQuestion = dgv_Questions.CurrentRow.Cells[2].Value.ToString();
+
+            string QuestSQL = "SELECT [Quest_ID] " +
+                              ",[Quest_Topic] " +
+                              ",[Quest_SubTopic] " +
+                              ",[Quest_Type] " +
+                              ",[Quest_Difficulty] " +
+                              ",[Quest_Stem] " +
+                              ",[Quest_Distractor_A] " +
+                              ",[Quest_Distractor_B] " +
+                              ",[Quest_Distractor_C] " +
+                              ",[Quest_Distractor_D] " +
+                              ",[Quest_Distractor_E] " +
+                              ",[Quest_Answer] " +
+                              "  FROM[TestDB].[dbo].[Questions] " +
+                              "  WHERE [Quest_ID] = " + General.QTS_SelectedQuestion;
+
+            DataSet GetQuestDS = new DataSet();
+            GetQuestDS = General.GetData(QuestSQL)
+
+            cbo_Quest_Type.SelectedIndex = -1;
+
+            rbtn_Quest_Diff_1.Checked = false;
+            rbtn_Quest_Diff_2.Checked = false;
+            rbtn_Quest_Diff_3.Checked = false;
+            rbtn_Quest_Diff_4.Checked = false;
+            rbtn_Quest_Diff_5.Checked = false;
+
+            txt_Quest_Stem.Text = "";
+
+            txt_Quest_Distractor_1.Text = "";
+            txt_Quest_Distractor_2.Text = "";
+            txt_Quest_Distractor_3.Text = "";
+            txt_Quest_Distractor_4.Text = "";
+            txt_Quest_Distractor_5.Text = "";
+
+            rbtn_Quest_Answer_1.Checked = false;
+            rbtn_Quest_Answer_2.Checked = false;
+            rbtn_Quest_Answer_3.Checked = false;
+            rbtn_Quest_Answer_4.Checked = false;
+            rbtn_Quest_Answer_5.Checked = false;
 
         }
 
@@ -296,10 +356,143 @@ namespace TestMaker
         /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
         private void Dgv_Quest_Topics_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //txtTopic.Text = dgvTopics.CurrentRow.Cells[1].Value.ToString();
             General.QTS_SelectedTopic = dgv_Quest_Topics.CurrentRow.Cells[0].Value.ToString();
-            //btnAddUpdateTopic.Text = "Update";
             FillSubTopics(2, General.QTS_SelectedTopic);
+        }
+
+        private void ClearQuestion()
+        {
+            dgv_Questions.DataSource = null;
+            dgv_Quest_Topics.ClearSelection();
+            dgv_Quest_SubTopics.ClearSelection();
+
+            cbo_Quest_Type.SelectedIndex = -1;
+
+            rbtn_Quest_Diff_1.Checked = false;
+            rbtn_Quest_Diff_2.Checked = false;
+            rbtn_Quest_Diff_3.Checked = false;
+            rbtn_Quest_Diff_4.Checked = false;
+            rbtn_Quest_Diff_5.Checked = false;
+
+            txt_Quest_Stem.Text = "";
+
+            txt_Quest_Distractor_1.Text = "";
+            txt_Quest_Distractor_2.Text = "";
+            txt_Quest_Distractor_3.Text = "";
+            txt_Quest_Distractor_4.Text = "";
+            txt_Quest_Distractor_5.Text = "";
+
+            rbtn_Quest_Answer_1.Checked = false;
+            rbtn_Quest_Answer_2.Checked = false;
+            rbtn_Quest_Answer_3.Checked = false;
+            rbtn_Quest_Answer_4.Checked = false;
+            rbtn_Quest_Answer_5.Checked = false;
+
+            FillQuestions();
+            dgv_Questions.ClearSelection();
+            btn_Quest_AddUpdate.Text = "Add";
+        }
+
+        private void Btn_Quest_Clear_Click(object sender, EventArgs e)
+        {
+            ClearQuestion();
+        }
+
+        private void Btn_Quest_AddUpdate_Click(object sender, EventArgs e)
+        {
+            if(btn_Quest_AddUpdate.Text == "Add")
+            {
+                bool bRsltA = false;
+
+                int iQstDiff = 1;
+                if (rbtn_Quest_Diff_1.Checked) { iQstDiff = 1; }
+                if (rbtn_Quest_Diff_2.Checked) { iQstDiff = 2; }
+                if (rbtn_Quest_Diff_3.Checked) { iQstDiff = 3; }
+                if (rbtn_Quest_Diff_4.Checked) { iQstDiff = 4; }
+                if (rbtn_Quest_Diff_5.Checked) { iQstDiff = 5; }
+
+                int iQstAns = 1;
+                if (rbtn_Quest_Answer_1.Checked) { iQstAns = 1; }
+                if (rbtn_Quest_Answer_2.Checked) { iQstAns = 2; }
+                if (rbtn_Quest_Answer_3.Checked) { iQstAns = 3; }
+                if (rbtn_Quest_Answer_4.Checked) { iQstAns = 4; }
+                if (rbtn_Quest_Answer_5.Checked) { iQstAns = 5; }
+
+                string sQstAdd = "insert into dbo.Questions values (" +
+                    dgv_Quest_Topics.CurrentRow.Cells[0].Value.ToString() + ", " +
+                    dgv_Quest_SubTopics.CurrentRow.Cells[0].Value.ToString() + ", " +
+                    (cbo_Quest_Type.SelectedIndex + 1).ToString() + ", " +
+                    iQstDiff.ToString() + ", " +
+                    "'" + txt_Quest_Stem.Text + "', " +
+                    "'" + txt_Quest_Distractor_1.Text + "', " +
+                    "'" + txt_Quest_Distractor_2.Text + "', " +
+                    "'" + txt_Quest_Distractor_3.Text + "', " +
+                    "'" + txt_Quest_Distractor_4.Text + "', " +
+                    "'" + txt_Quest_Distractor_5.Text + "', " +
+                    iQstAns.ToString() + ")";
+
+                bRsltA = General.AddUpdate(sQstAdd);
+                if (bRsltA == false)
+                {
+                    MessageBox.Show("There was a problem Adding the new Question!", "Problem Adding", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dgv_Questions.ClearSelection();
+                    btn_Quest_AddUpdate.Text = "Add";
+                    dgv_Questions.DataSource = null;
+                    FillQuestions();
+                    ClearQuestion();
+                    MessageBox.Show("Question Added!", "Question Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                bool bRsltA = false;
+
+                int iQstDiff = 1;
+                if (rbtn_Quest_Diff_1.Checked) { iQstDiff = 1; }
+                if (rbtn_Quest_Diff_2.Checked) { iQstDiff = 2; }
+                if (rbtn_Quest_Diff_3.Checked) { iQstDiff = 3; }
+                if (rbtn_Quest_Diff_4.Checked) { iQstDiff = 4; }
+                if (rbtn_Quest_Diff_5.Checked) { iQstDiff = 5; }
+
+                int iQstAns = 1;
+                if (rbtn_Quest_Answer_1.Checked) { iQstAns = 1; }
+                if (rbtn_Quest_Answer_2.Checked) { iQstAns = 2; }
+                if (rbtn_Quest_Answer_3.Checked) { iQstAns = 3; }
+                if (rbtn_Quest_Answer_4.Checked) { iQstAns = 4; }
+                if (rbtn_Quest_Answer_5.Checked) { iQstAns = 5; }
+
+                string sQstUpd = "Update dbo.Questions Set" +
+                                " Quest_Type = " + (cbo_Quest_Type.SelectedIndex + 1).ToString() + "," +
+                                " Quest_Difficulty = " + iQstDiff.ToString() + "," +
+                                " Quest_Stem = '" + txt_Quest_Stem.Text + "'," +
+                                " Quest_Distractor_A = '" + txt_Quest_Distractor_1.Text + "'," +
+                                " Quest_Distractor_B = '" + txt_Quest_Distractor_2.Text + "'," +
+                                " Quest_Distractor_C = '" + txt_Quest_Distractor_3.Text + "'," +
+                                " Quest_Distractor_D = '" + txt_Quest_Distractor_4.Text + "'," +
+                                " Quest_Distractor_E = '" + txt_Quest_Distractor_5.Text + "'," +
+                                " Quest_Answer = " + iQstAns.ToString() + " Where Quest_ID = " + dgv_Questions.CurrentRow.Cells[2].Value.ToString();
+
+                bRsltA = General.AddUpdate(sQstUpd);
+                if (bRsltA == false)
+                {
+                    MessageBox.Show("There was a problem Updating the Question!", "Problem Updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dgv_Questions.ClearSelection();
+                    btn_Quest_AddUpdate.Text = "Add";
+                    dgv_Questions.DataSource = null;
+                    FillQuestions();
+                    ClearQuestion();
+                    MessageBox.Show("Question Updated!", "Question Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+
         }
     }
 

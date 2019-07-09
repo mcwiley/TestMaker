@@ -43,11 +43,11 @@
             this.lblTopics = new System.Windows.Forms.Label();
             this.tabPageQuestions = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtn_Quest_Answer_5 = new System.Windows.Forms.RadioButton();
+            this.rbtn_Quest_Answer_4 = new System.Windows.Forms.RadioButton();
+            this.rbtn_Quest_Answer_3 = new System.Windows.Forms.RadioButton();
+            this.rbtn_Quest_Answer_2 = new System.Windows.Forms.RadioButton();
+            this.rbtn_Quest_Answer_1 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_Quest_SubTopics = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
@@ -76,6 +76,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Questions = new System.Windows.Forms.DataGridView();
             this.tabPageTests = new System.Windows.Forms.TabPage();
+            this.btn_Quest_Clear = new System.Windows.Forms.Button();
             this.tabTest.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).BeginInit();
@@ -229,6 +230,7 @@
             // 
             // tabPageQuestions
             // 
+            this.tabPageQuestions.Controls.Add(this.btn_Quest_Clear);
             this.tabPageQuestions.Controls.Add(this.groupBox1);
             this.tabPageQuestions.Controls.Add(this.label3);
             this.tabPageQuestions.Controls.Add(this.dgv_Quest_SubTopics);
@@ -268,11 +270,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton6);
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rbtn_Quest_Answer_5);
+            this.groupBox1.Controls.Add(this.rbtn_Quest_Answer_4);
+            this.groupBox1.Controls.Add(this.rbtn_Quest_Answer_3);
+            this.groupBox1.Controls.Add(this.rbtn_Quest_Answer_2);
+            this.groupBox1.Controls.Add(this.rbtn_Quest_Answer_1);
             this.groupBox1.Location = new System.Drawing.Point(841, 126);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(71, 368);
@@ -280,55 +282,55 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Answer";
             // 
-            // radioButton6
+            // rbtn_Quest_Answer_5
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(28, 338);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(14, 13);
-            this.radioButton6.TabIndex = 38;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rbtn_Quest_Answer_5.AutoSize = true;
+            this.rbtn_Quest_Answer_5.Location = new System.Drawing.Point(28, 338);
+            this.rbtn_Quest_Answer_5.Name = "rbtn_Quest_Answer_5";
+            this.rbtn_Quest_Answer_5.Size = new System.Drawing.Size(14, 13);
+            this.rbtn_Quest_Answer_5.TabIndex = 38;
+            this.rbtn_Quest_Answer_5.TabStop = true;
+            this.rbtn_Quest_Answer_5.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rbtn_Quest_Answer_4
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(28, 263);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(14, 13);
-            this.radioButton5.TabIndex = 37;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rbtn_Quest_Answer_4.AutoSize = true;
+            this.rbtn_Quest_Answer_4.Location = new System.Drawing.Point(28, 263);
+            this.rbtn_Quest_Answer_4.Name = "rbtn_Quest_Answer_4";
+            this.rbtn_Quest_Answer_4.Size = new System.Drawing.Size(14, 13);
+            this.rbtn_Quest_Answer_4.TabIndex = 37;
+            this.rbtn_Quest_Answer_4.TabStop = true;
+            this.rbtn_Quest_Answer_4.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbtn_Quest_Answer_3
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(28, 193);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(14, 13);
-            this.radioButton4.TabIndex = 36;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbtn_Quest_Answer_3.AutoSize = true;
+            this.rbtn_Quest_Answer_3.Location = new System.Drawing.Point(28, 193);
+            this.rbtn_Quest_Answer_3.Name = "rbtn_Quest_Answer_3";
+            this.rbtn_Quest_Answer_3.Size = new System.Drawing.Size(14, 13);
+            this.rbtn_Quest_Answer_3.TabIndex = 36;
+            this.rbtn_Quest_Answer_3.TabStop = true;
+            this.rbtn_Quest_Answer_3.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbtn_Quest_Answer_2
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(28, 117);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(14, 13);
-            this.radioButton3.TabIndex = 35;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtn_Quest_Answer_2.AutoSize = true;
+            this.rbtn_Quest_Answer_2.Location = new System.Drawing.Point(28, 117);
+            this.rbtn_Quest_Answer_2.Name = "rbtn_Quest_Answer_2";
+            this.rbtn_Quest_Answer_2.Size = new System.Drawing.Size(14, 13);
+            this.rbtn_Quest_Answer_2.TabIndex = 35;
+            this.rbtn_Quest_Answer_2.TabStop = true;
+            this.rbtn_Quest_Answer_2.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtn_Quest_Answer_1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(28, 44);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 34;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtn_Quest_Answer_1.AutoSize = true;
+            this.rbtn_Quest_Answer_1.Location = new System.Drawing.Point(28, 44);
+            this.rbtn_Quest_Answer_1.Name = "rbtn_Quest_Answer_1";
+            this.rbtn_Quest_Answer_1.Size = new System.Drawing.Size(14, 13);
+            this.rbtn_Quest_Answer_1.TabIndex = 34;
+            this.rbtn_Quest_Answer_1.TabStop = true;
+            this.rbtn_Quest_Answer_1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -373,12 +375,13 @@
             // 
             // btn_Quest_AddUpdate
             // 
-            this.btn_Quest_AddUpdate.Location = new System.Drawing.Point(847, 514);
+            this.btn_Quest_AddUpdate.Location = new System.Drawing.Point(837, 514);
             this.btn_Quest_AddUpdate.Name = "btn_Quest_AddUpdate";
             this.btn_Quest_AddUpdate.Size = new System.Drawing.Size(75, 23);
             this.btn_Quest_AddUpdate.TabIndex = 27;
             this.btn_Quest_AddUpdate.Text = "Add";
             this.btn_Quest_AddUpdate.UseVisualStyleBackColor = true;
+            this.btn_Quest_AddUpdate.Click += new System.EventHandler(this.Btn_Quest_AddUpdate_Click);
             // 
             // label13
             // 
@@ -599,6 +602,16 @@
             this.tabPageTests.Text = "Tests / Quizes";
             this.tabPageTests.UseVisualStyleBackColor = true;
             // 
+            // btn_Quest_Clear
+            // 
+            this.btn_Quest_Clear.Location = new System.Drawing.Point(742, 514);
+            this.btn_Quest_Clear.Name = "btn_Quest_Clear";
+            this.btn_Quest_Clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_Quest_Clear.TabIndex = 39;
+            this.btn_Quest_Clear.Text = "Clear";
+            this.btn_Quest_Clear.UseVisualStyleBackColor = true;
+            this.btn_Quest_Clear.Click += new System.EventHandler(this.Btn_Quest_Clear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -673,11 +686,12 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dgv_Quest_Topics;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtn_Quest_Answer_5;
+        private System.Windows.Forms.RadioButton rbtn_Quest_Answer_4;
+        private System.Windows.Forms.RadioButton rbtn_Quest_Answer_3;
+        private System.Windows.Forms.RadioButton rbtn_Quest_Answer_2;
+        private System.Windows.Forms.RadioButton rbtn_Quest_Answer_1;
+        private System.Windows.Forms.Button btn_Quest_Clear;
     }
 }
 
