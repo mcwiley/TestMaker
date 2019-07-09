@@ -77,6 +77,23 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Questions = new System.Windows.Forms.DataGridView();
             this.tabPageTests = new System.Windows.Forms.TabPage();
+            this.btn_NewProfile = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cboProfileSelect = new System.Windows.Forms.ComboBox();
+            this.grpBX = new System.Windows.Forms.GroupBox();
+            this.cbpProfileSubTopic = new System.Windows.Forms.ComboBox();
+            this.cboProfileTopic = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.label17 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabTest.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).BeginInit();
@@ -86,6 +103,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_SubTopics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).BeginInit();
+            this.tabPageTests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grpBX.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -604,6 +625,11 @@
             // 
             // tabPageTests
             // 
+            this.tabPageTests.Controls.Add(this.label18);
+            this.tabPageTests.Controls.Add(this.grpBX);
+            this.tabPageTests.Controls.Add(this.cboProfileSelect);
+            this.tabPageTests.Controls.Add(this.dataGridView1);
+            this.tabPageTests.Controls.Add(this.btn_NewProfile);
             this.tabPageTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageTests.Location = new System.Drawing.Point(4, 29);
             this.tabPageTests.Name = "tabPageTests";
@@ -611,6 +637,180 @@
             this.tabPageTests.TabIndex = 2;
             this.tabPageTests.Text = "Tests / Quizes";
             this.tabPageTests.UseVisualStyleBackColor = true;
+            // 
+            // btn_NewProfile
+            // 
+            this.btn_NewProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NewProfile.Location = new System.Drawing.Point(26, 24);
+            this.btn_NewProfile.Name = "btn_NewProfile";
+            this.btn_NewProfile.Size = new System.Drawing.Size(103, 28);
+            this.btn_NewProfile.TabIndex = 2;
+            this.btn_NewProfile.Text = "New Profile";
+            this.btn_NewProfile.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(26, 208);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(367, 150);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // cboProfileSelect
+            // 
+            this.cboProfileSelect.FormattingEnabled = true;
+            this.cboProfileSelect.Items.AddRange(new object[] {
+            "Profile 1",
+            "Profile 2"});
+            this.cboProfileSelect.Location = new System.Drawing.Point(182, 25);
+            this.cboProfileSelect.Name = "cboProfileSelect";
+            this.cboProfileSelect.Size = new System.Drawing.Size(315, 24);
+            this.cboProfileSelect.TabIndex = 4;
+            // 
+            // grpBX
+            // 
+            this.grpBX.Controls.Add(this.numericUpDown1);
+            this.grpBX.Controls.Add(this.label17);
+            this.grpBX.Controls.Add(this.label16);
+            this.grpBX.Controls.Add(this.radioButton1);
+            this.grpBX.Controls.Add(this.radioButton2);
+            this.grpBX.Controls.Add(this.radioButton3);
+            this.grpBX.Controls.Add(this.radioButton4);
+            this.grpBX.Controls.Add(this.radioButton5);
+            this.grpBX.Controls.Add(this.label15);
+            this.grpBX.Controls.Add(this.label4);
+            this.grpBX.Controls.Add(this.cbpProfileSubTopic);
+            this.grpBX.Controls.Add(this.cboProfileTopic);
+            this.grpBX.Location = new System.Drawing.Point(26, 69);
+            this.grpBX.Name = "grpBX";
+            this.grpBX.Size = new System.Drawing.Size(837, 80);
+            this.grpBX.TabIndex = 5;
+            this.grpBX.TabStop = false;
+            this.grpBX.Text = "Profile Item Selection";
+            // 
+            // cbpProfileSubTopic
+            // 
+            this.cbpProfileSubTopic.FormattingEnabled = true;
+            this.cbpProfileSubTopic.Location = new System.Drawing.Point(259, 41);
+            this.cbpProfileSubTopic.Name = "cbpProfileSubTopic";
+            this.cbpProfileSubTopic.Size = new System.Drawing.Size(212, 24);
+            this.cbpProfileSubTopic.TabIndex = 3;
+            // 
+            // cboProfileTopic
+            // 
+            this.cboProfileTopic.FormattingEnabled = true;
+            this.cboProfileTopic.Location = new System.Drawing.Point(18, 41);
+            this.cboProfileTopic.Name = "cboProfileTopic";
+            this.cboProfileTopic.Size = new System.Drawing.Size(212, 24);
+            this.cboProfileTopic.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 16);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Topic Select";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(259, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 16);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "SubTopic Select";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(510, 18);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(113, 16);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Question Difficulty";
+            this.label16.Click += new System.EventHandler(this.Label16_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(668, 41);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(33, 20);
+            this.radioButton1.TabIndex = 19;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "5";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(629, 41);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(33, 20);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "4";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(590, 41);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(33, 20);
+            this.radioButton3.TabIndex = 17;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(551, 41);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(33, 20);
+            this.radioButton4.TabIndex = 16;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "2";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(512, 41);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(33, 20);
+            this.radioButton5.TabIndex = 15;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "1";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(729, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 16);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "# of Question";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(732, 40);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(82, 22);
+            this.numericUpDown1.TabIndex = 22;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(23, 189);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(104, 16);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Profile Items List";
             // 
             // Form1
             // 
@@ -636,6 +836,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_SubTopics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).EndInit();
+            this.tabPageTests.ResumeLayout(false);
+            this.tabPageTests.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.grpBX.ResumeLayout(false);
+            this.grpBX.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,6 +898,23 @@
         private System.Windows.Forms.RadioButton rbtn_Quest_Answer_2;
         private System.Windows.Forms.RadioButton rbtn_Quest_Answer_1;
         private System.Windows.Forms.Button btn_Quest_Clear;
+        private System.Windows.Forms.GroupBox grpBX;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbpProfileSubTopic;
+        private System.Windows.Forms.ComboBox cboProfileTopic;
+        private System.Windows.Forms.ComboBox cboProfileSelect;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_NewProfile;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 

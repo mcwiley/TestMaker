@@ -289,12 +289,19 @@ namespace TestMaker
             switch (tabTest.SelectedIndex)
             {
                 case 0:
-                case 2:
                     break;
                 case 1:
                     FillQuestions();
                     FillTopics(2); // fill the topics
                     break;
+                case 2:
+                    cboProfileSelect.ValueMember = "id";
+
+                    cboProfileSelect.DisplayMember = "name";
+
+                    cboProfileSelect.DataSource = dataTable;
+                    break;
+
             }
         }
 
@@ -541,6 +548,11 @@ namespace TestMaker
             }
 
             btn_Quest_AddUpdate.Text = "Update";
+        }
+
+        private void Label16_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
