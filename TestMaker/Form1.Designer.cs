@@ -77,23 +77,32 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Questions = new System.Windows.Forms.DataGridView();
             this.tabPageTests = new System.Windows.Forms.TabPage();
-            this.btn_NewProfile = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cboProfileSelect = new System.Windows.Forms.ComboBox();
             this.grpBX = new System.Windows.Forms.GroupBox();
+            this.numUDQuestions = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.rbtnProfileItemDifficulty_E = new System.Windows.Forms.RadioButton();
+            this.rbtnProfileItemDifficulty_D = new System.Windows.Forms.RadioButton();
+            this.rbtnProfileItemDifficulty_C = new System.Windows.Forms.RadioButton();
+            this.rbtnProfileItemDifficulty_B = new System.Windows.Forms.RadioButton();
+            this.rbtnProfileItemDifficulty_A = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbpProfileSubTopic = new System.Windows.Forms.ComboBox();
             this.cboProfileTopic = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.label17 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.dgvProfileItems = new System.Windows.Forms.DataGridView();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnProfileItemAddUpd = new System.Windows.Forms.Button();
+            this.btnProfileItemClear = new System.Windows.Forms.Button();
+            this.gbxProfiles = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cboProfileSelect = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtProfileName = new System.Windows.Forms.TextBox();
+            this.btnProfileNameAddUpd = new System.Windows.Forms.Button();
+            this.btnProfileNameClear = new System.Windows.Forms.Button();
+            this.btnProfileNameDelete = new System.Windows.Forms.Button();
+            this.btnProfileItemDelete = new System.Windows.Forms.Button();
             this.tabTest.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).BeginInit();
@@ -104,9 +113,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).BeginInit();
             this.tabPageTests.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpBX.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).BeginInit();
+            this.gbxProfiles.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -625,11 +635,8 @@
             // 
             // tabPageTests
             // 
-            this.tabPageTests.Controls.Add(this.label18);
+            this.tabPageTests.Controls.Add(this.gbxProfiles);
             this.tabPageTests.Controls.Add(this.grpBX);
-            this.tabPageTests.Controls.Add(this.cboProfileSelect);
-            this.tabPageTests.Controls.Add(this.dataGridView1);
-            this.tabPageTests.Controls.Add(this.btn_NewProfile);
             this.tabPageTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageTests.Location = new System.Drawing.Point(4, 29);
             this.tabPageTests.Name = "tabPageTests";
@@ -638,60 +645,135 @@
             this.tabPageTests.Text = "Tests / Quizes";
             this.tabPageTests.UseVisualStyleBackColor = true;
             // 
-            // btn_NewProfile
-            // 
-            this.btn_NewProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NewProfile.Location = new System.Drawing.Point(26, 24);
-            this.btn_NewProfile.Name = "btn_NewProfile";
-            this.btn_NewProfile.Size = new System.Drawing.Size(103, 28);
-            this.btn_NewProfile.TabIndex = 2;
-            this.btn_NewProfile.Text = "New Profile";
-            this.btn_NewProfile.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 208);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(367, 150);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // cboProfileSelect
-            // 
-            this.cboProfileSelect.FormattingEnabled = true;
-            this.cboProfileSelect.Items.AddRange(new object[] {
-            "Profile 1",
-            "Profile 2"});
-            this.cboProfileSelect.Location = new System.Drawing.Point(182, 25);
-            this.cboProfileSelect.Name = "cboProfileSelect";
-            this.cboProfileSelect.Size = new System.Drawing.Size(315, 24);
-            this.cboProfileSelect.TabIndex = 4;
-            // 
             // grpBX
             // 
-            this.grpBX.Controls.Add(this.numericUpDown1);
+            this.grpBX.Controls.Add(this.btnProfileItemDelete);
+            this.grpBX.Controls.Add(this.btnProfileItemClear);
+            this.grpBX.Controls.Add(this.btnProfileItemAddUpd);
+            this.grpBX.Controls.Add(this.label18);
+            this.grpBX.Controls.Add(this.dgvProfileItems);
+            this.grpBX.Controls.Add(this.numUDQuestions);
             this.grpBX.Controls.Add(this.label17);
             this.grpBX.Controls.Add(this.label16);
-            this.grpBX.Controls.Add(this.radioButton1);
-            this.grpBX.Controls.Add(this.radioButton2);
-            this.grpBX.Controls.Add(this.radioButton3);
-            this.grpBX.Controls.Add(this.radioButton4);
-            this.grpBX.Controls.Add(this.radioButton5);
+            this.grpBX.Controls.Add(this.rbtnProfileItemDifficulty_E);
+            this.grpBX.Controls.Add(this.rbtnProfileItemDifficulty_D);
+            this.grpBX.Controls.Add(this.rbtnProfileItemDifficulty_C);
+            this.grpBX.Controls.Add(this.rbtnProfileItemDifficulty_B);
+            this.grpBX.Controls.Add(this.rbtnProfileItemDifficulty_A);
             this.grpBX.Controls.Add(this.label15);
             this.grpBX.Controls.Add(this.label4);
             this.grpBX.Controls.Add(this.cbpProfileSubTopic);
             this.grpBX.Controls.Add(this.cboProfileTopic);
-            this.grpBX.Location = new System.Drawing.Point(26, 69);
+            this.grpBX.Location = new System.Drawing.Point(51, 178);
             this.grpBX.Name = "grpBX";
-            this.grpBX.Size = new System.Drawing.Size(837, 80);
+            this.grpBX.Size = new System.Drawing.Size(837, 351);
             this.grpBX.TabIndex = 5;
             this.grpBX.TabStop = false;
             this.grpBX.Text = "Profile Item Selection";
             // 
+            // numUDQuestions
+            // 
+            this.numUDQuestions.Location = new System.Drawing.Point(621, 104);
+            this.numUDQuestions.Name = "numUDQuestions";
+            this.numUDQuestions.Size = new System.Drawing.Size(82, 22);
+            this.numUDQuestions.TabIndex = 22;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(618, 81);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 16);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "# of Question";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(618, 25);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(113, 16);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Question Difficulty";
+            this.label16.Click += new System.EventHandler(this.Label16_Click);
+            // 
+            // rbtnProfileItemDifficulty_E
+            // 
+            this.rbtnProfileItemDifficulty_E.AutoSize = true;
+            this.rbtnProfileItemDifficulty_E.Location = new System.Drawing.Point(776, 48);
+            this.rbtnProfileItemDifficulty_E.Name = "rbtnProfileItemDifficulty_E";
+            this.rbtnProfileItemDifficulty_E.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_E.TabIndex = 19;
+            this.rbtnProfileItemDifficulty_E.TabStop = true;
+            this.rbtnProfileItemDifficulty_E.Text = "5";
+            this.rbtnProfileItemDifficulty_E.UseVisualStyleBackColor = true;
+            // 
+            // rbtnProfileItemDifficulty_D
+            // 
+            this.rbtnProfileItemDifficulty_D.AutoSize = true;
+            this.rbtnProfileItemDifficulty_D.Location = new System.Drawing.Point(737, 48);
+            this.rbtnProfileItemDifficulty_D.Name = "rbtnProfileItemDifficulty_D";
+            this.rbtnProfileItemDifficulty_D.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_D.TabIndex = 18;
+            this.rbtnProfileItemDifficulty_D.TabStop = true;
+            this.rbtnProfileItemDifficulty_D.Text = "4";
+            this.rbtnProfileItemDifficulty_D.UseVisualStyleBackColor = true;
+            // 
+            // rbtnProfileItemDifficulty_C
+            // 
+            this.rbtnProfileItemDifficulty_C.AutoSize = true;
+            this.rbtnProfileItemDifficulty_C.Location = new System.Drawing.Point(698, 48);
+            this.rbtnProfileItemDifficulty_C.Name = "rbtnProfileItemDifficulty_C";
+            this.rbtnProfileItemDifficulty_C.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_C.TabIndex = 17;
+            this.rbtnProfileItemDifficulty_C.TabStop = true;
+            this.rbtnProfileItemDifficulty_C.Text = "3";
+            this.rbtnProfileItemDifficulty_C.UseVisualStyleBackColor = true;
+            // 
+            // rbtnProfileItemDifficulty_B
+            // 
+            this.rbtnProfileItemDifficulty_B.AutoSize = true;
+            this.rbtnProfileItemDifficulty_B.Location = new System.Drawing.Point(659, 48);
+            this.rbtnProfileItemDifficulty_B.Name = "rbtnProfileItemDifficulty_B";
+            this.rbtnProfileItemDifficulty_B.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_B.TabIndex = 16;
+            this.rbtnProfileItemDifficulty_B.TabStop = true;
+            this.rbtnProfileItemDifficulty_B.Text = "2";
+            this.rbtnProfileItemDifficulty_B.UseVisualStyleBackColor = true;
+            // 
+            // rbtnProfileItemDifficulty_A
+            // 
+            this.rbtnProfileItemDifficulty_A.AutoSize = true;
+            this.rbtnProfileItemDifficulty_A.Location = new System.Drawing.Point(620, 48);
+            this.rbtnProfileItemDifficulty_A.Name = "rbtnProfileItemDifficulty_A";
+            this.rbtnProfileItemDifficulty_A.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_A.TabIndex = 15;
+            this.rbtnProfileItemDifficulty_A.TabStop = true;
+            this.rbtnProfileItemDifficulty_A.Text = "1";
+            this.rbtnProfileItemDifficulty_A.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(387, 81);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 16);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "SubTopic Select";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(387, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 16);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Topic Select";
+            // 
             // cbpProfileSubTopic
             // 
             this.cbpProfileSubTopic.FormattingEnabled = true;
-            this.cbpProfileSubTopic.Location = new System.Drawing.Point(259, 41);
+            this.cbpProfileSubTopic.Location = new System.Drawing.Point(387, 104);
             this.cbpProfileSubTopic.Name = "cbpProfileSubTopic";
             this.cbpProfileSubTopic.Size = new System.Drawing.Size(212, 24);
             this.cbpProfileSubTopic.TabIndex = 3;
@@ -699,118 +781,136 @@
             // cboProfileTopic
             // 
             this.cboProfileTopic.FormattingEnabled = true;
-            this.cboProfileTopic.Location = new System.Drawing.Point(18, 41);
+            this.cboProfileTopic.Location = new System.Drawing.Point(387, 48);
             this.cboProfileTopic.Name = "cboProfileTopic";
             this.cboProfileTopic.Size = new System.Drawing.Size(212, 24);
             this.cboProfileTopic.TabIndex = 2;
             // 
-            // label4
+            // dgvProfileItems
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Topic Select";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(259, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(108, 16);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "SubTopic Select";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(510, 18);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(113, 16);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "Question Difficulty";
-            this.label16.Click += new System.EventHandler(this.Label16_Click);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(668, 41);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(33, 20);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "5";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(629, 41);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(33, 20);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "4";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(590, 41);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(33, 20);
-            this.radioButton3.TabIndex = 17;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "3";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(551, 41);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(33, 20);
-            this.radioButton4.TabIndex = 16;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "2";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(512, 41);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(33, 20);
-            this.radioButton5.TabIndex = 15;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "1";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(729, 18);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 16);
-            this.label17.TabIndex = 21;
-            this.label17.Text = "# of Question";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(732, 40);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(82, 22);
-            this.numericUpDown1.TabIndex = 22;
+            this.dgvProfileItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProfileItems.Location = new System.Drawing.Point(22, 48);
+            this.dgvProfileItems.Name = "dgvProfileItems";
+            this.dgvProfileItems.Size = new System.Drawing.Size(342, 280);
+            this.dgvProfileItems.TabIndex = 23;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(23, 189);
+            this.label18.Location = new System.Drawing.Point(19, 25);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(104, 16);
-            this.label18.TabIndex = 6;
+            this.label18.TabIndex = 24;
             this.label18.Text = "Profile Items List";
+            // 
+            // btnProfileItemAddUpd
+            // 
+            this.btnProfileItemAddUpd.Location = new System.Drawing.Point(387, 174);
+            this.btnProfileItemAddUpd.Name = "btnProfileItemAddUpd";
+            this.btnProfileItemAddUpd.Size = new System.Drawing.Size(196, 28);
+            this.btnProfileItemAddUpd.TabIndex = 25;
+            this.btnProfileItemAddUpd.Text = "Add New Profile Item";
+            this.btnProfileItemAddUpd.UseVisualStyleBackColor = true;
+            // 
+            // btnProfileItemClear
+            // 
+            this.btnProfileItemClear.Location = new System.Drawing.Point(605, 174);
+            this.btnProfileItemClear.Name = "btnProfileItemClear";
+            this.btnProfileItemClear.Size = new System.Drawing.Size(196, 28);
+            this.btnProfileItemClear.TabIndex = 26;
+            this.btnProfileItemClear.Text = "Clear Profile Item";
+            this.btnProfileItemClear.UseVisualStyleBackColor = true;
+            // 
+            // gbxProfiles
+            // 
+            this.gbxProfiles.Controls.Add(this.btnProfileNameDelete);
+            this.gbxProfiles.Controls.Add(this.btnProfileNameClear);
+            this.gbxProfiles.Controls.Add(this.btnProfileNameAddUpd);
+            this.gbxProfiles.Controls.Add(this.label20);
+            this.gbxProfiles.Controls.Add(this.txtProfileName);
+            this.gbxProfiles.Controls.Add(this.label19);
+            this.gbxProfiles.Controls.Add(this.cboProfileSelect);
+            this.gbxProfiles.Location = new System.Drawing.Point(51, 26);
+            this.gbxProfiles.Name = "gbxProfiles";
+            this.gbxProfiles.Size = new System.Drawing.Size(837, 133);
+            this.gbxProfiles.TabIndex = 9;
+            this.gbxProfiles.TabStop = false;
+            this.gbxProfiles.Text = "Profile List";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(19, 27);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(98, 16);
+            this.label19.TabIndex = 9;
+            this.label19.Text = "Select a Profile";
+            // 
+            // cboProfileSelect
+            // 
+            this.cboProfileSelect.FormattingEnabled = true;
+            this.cboProfileSelect.Items.AddRange(new object[] {
+            "Profile 1",
+            "Profile 2"});
+            this.cboProfileSelect.Location = new System.Drawing.Point(22, 47);
+            this.cboProfileSelect.Name = "cboProfileSelect";
+            this.cboProfileSelect.Size = new System.Drawing.Size(342, 24);
+            this.cboProfileSelect.TabIndex = 8;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(19, 76);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(86, 16);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "Profile Name";
+            // 
+            // txtProfileName
+            // 
+            this.txtProfileName.Location = new System.Drawing.Point(22, 95);
+            this.txtProfileName.Name = "txtProfileName";
+            this.txtProfileName.Size = new System.Drawing.Size(342, 22);
+            this.txtProfileName.TabIndex = 10;
+            // 
+            // btnProfileNameAddUpd
+            // 
+            this.btnProfileNameAddUpd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfileNameAddUpd.Location = new System.Drawing.Point(387, 47);
+            this.btnProfileNameAddUpd.Name = "btnProfileNameAddUpd";
+            this.btnProfileNameAddUpd.Size = new System.Drawing.Size(196, 28);
+            this.btnProfileNameAddUpd.TabIndex = 12;
+            this.btnProfileNameAddUpd.Text = "Add New Profile";
+            this.btnProfileNameAddUpd.UseVisualStyleBackColor = true;
+            // 
+            // btnProfileNameClear
+            // 
+            this.btnProfileNameClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfileNameClear.Location = new System.Drawing.Point(605, 47);
+            this.btnProfileNameClear.Name = "btnProfileNameClear";
+            this.btnProfileNameClear.Size = new System.Drawing.Size(196, 28);
+            this.btnProfileNameClear.TabIndex = 13;
+            this.btnProfileNameClear.Text = "Clear Profile Name";
+            this.btnProfileNameClear.UseVisualStyleBackColor = true;
+            // 
+            // btnProfileNameDelete
+            // 
+            this.btnProfileNameDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfileNameDelete.Location = new System.Drawing.Point(387, 92);
+            this.btnProfileNameDelete.Name = "btnProfileNameDelete";
+            this.btnProfileNameDelete.Size = new System.Drawing.Size(196, 28);
+            this.btnProfileNameDelete.TabIndex = 14;
+            this.btnProfileNameDelete.Text = "Delete Profile";
+            this.btnProfileNameDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnProfileItemDelete
+            // 
+            this.btnProfileItemDelete.Location = new System.Drawing.Point(390, 219);
+            this.btnProfileItemDelete.Name = "btnProfileItemDelete";
+            this.btnProfileItemDelete.Size = new System.Drawing.Size(196, 28);
+            this.btnProfileItemDelete.TabIndex = 27;
+            this.btnProfileItemDelete.Text = "Delete Profile Item";
+            this.btnProfileItemDelete.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -837,11 +937,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).EndInit();
             this.tabPageTests.ResumeLayout(false);
-            this.tabPageTests.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpBX.ResumeLayout(false);
             this.grpBX.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).EndInit();
+            this.gbxProfiles.ResumeLayout(false);
+            this.gbxProfiles.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -900,21 +1001,30 @@
         private System.Windows.Forms.Button btn_Quest_Clear;
         private System.Windows.Forms.GroupBox grpBX;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton rbtnProfileItemDifficulty_E;
+        private System.Windows.Forms.RadioButton rbtnProfileItemDifficulty_D;
+        private System.Windows.Forms.RadioButton rbtnProfileItemDifficulty_C;
+        private System.Windows.Forms.RadioButton rbtnProfileItemDifficulty_B;
+        private System.Windows.Forms.RadioButton rbtnProfileItemDifficulty_A;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbpProfileSubTopic;
         private System.Windows.Forms.ComboBox cboProfileTopic;
-        private System.Windows.Forms.ComboBox cboProfileSelect;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_NewProfile;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.NumericUpDown numUDQuestions;
+        private System.Windows.Forms.GroupBox gbxProfiles;
+        private System.Windows.Forms.Button btnProfileNameDelete;
+        private System.Windows.Forms.Button btnProfileNameClear;
+        private System.Windows.Forms.Button btnProfileNameAddUpd;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtProfileName;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox cboProfileSelect;
+        private System.Windows.Forms.Button btnProfileItemDelete;
+        private System.Windows.Forms.Button btnProfileItemClear;
+        private System.Windows.Forms.Button btnProfileItemAddUpd;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.DataGridView dgvProfileItems;
     }
 }
 
