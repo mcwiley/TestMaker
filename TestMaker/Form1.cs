@@ -295,11 +295,6 @@ namespace TestMaker
                     FillTopics(2); // fill the topics
                     break;
                 case 2:
-                    cboProfileSelect.ValueMember = "id";
-
-                    cboProfileSelect.DisplayMember = "name";
-
-                    cboProfileSelect.DataSource = dataTable;
                     break;
 
             }
@@ -550,10 +545,23 @@ namespace TestMaker
             btn_Quest_AddUpdate.Text = "Update";
         }
 
-        private void Label16_Click(object sender, EventArgs e)
-        {
 
+        private void FillProfiles()
+        {
+            DataSet dsProfileNames = new DataSet();
+            dsProfileNames = General.GetData("Select ID, Name From ProfileNames Order By Name");
+
+            cboProfileSelect.DataSource = null;
+            cboProfileSelect.ValueMember = "ID";
+            cboProfileSelect.DisplayMember = "Name";
+            cboProfileSelect.DataSource = dsProfileNames;
+
+            cboProfileToGenerate.DataSource = null;
+            cboProfileToGenerate.ValueMember = "ID";
+            cboProfileToGenerate.DisplayMember = "Name";
+            cboProfileToGenerate.DataSource = dsProfileNames;
         }
     }
+
 
 }

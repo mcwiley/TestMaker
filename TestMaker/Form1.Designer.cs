@@ -77,6 +77,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Questions = new System.Windows.Forms.DataGridView();
             this.tabPageTests = new System.Windows.Forms.TabPage();
+            this.gbxGenAndPrint = new System.Windows.Forms.GroupBox();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnPrintExamsQuizes = new System.Windows.Forms.Button();
+            this.numUDCopies = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cboProfileToGenerate = new System.Windows.Forms.ComboBox();
             this.gbxProfiles = new System.Windows.Forms.GroupBox();
             this.btnProfileNameDelete = new System.Windows.Forms.Button();
             this.btnProfileNameClear = new System.Windows.Forms.Button();
@@ -103,13 +110,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbpProfileSubTopic = new System.Windows.Forms.ComboBox();
             this.cboProfileTopic = new System.Windows.Forms.ComboBox();
-            this.gbxGenAndPrint = new System.Windows.Forms.GroupBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.cboProfileToGenerate = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label22 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnGenerate = new System.Windows.Forms.Button();
             this.tabTest.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).BeginInit();
@@ -120,12 +120,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).BeginInit();
             this.tabPageTests.SuspendLayout();
+            this.gbxGenAndPrint.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDCopies)).BeginInit();
             this.gbxProfiles.SuspendLayout();
             this.grpBX.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).BeginInit();
-            this.gbxGenAndPrint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -655,6 +655,77 @@
             this.tabPageTests.Text = "Tests / Quizes";
             this.tabPageTests.UseVisualStyleBackColor = true;
             // 
+            // gbxGenAndPrint
+            // 
+            this.gbxGenAndPrint.Controls.Add(this.btnGenerate);
+            this.gbxGenAndPrint.Controls.Add(this.btnPrintExamsQuizes);
+            this.gbxGenAndPrint.Controls.Add(this.numUDCopies);
+            this.gbxGenAndPrint.Controls.Add(this.label22);
+            this.gbxGenAndPrint.Controls.Add(this.label21);
+            this.gbxGenAndPrint.Controls.Add(this.cboProfileToGenerate);
+            this.gbxGenAndPrint.Location = new System.Drawing.Point(24, 442);
+            this.gbxGenAndPrint.Name = "gbxGenAndPrint";
+            this.gbxGenAndPrint.Size = new System.Drawing.Size(893, 87);
+            this.gbxGenAndPrint.TabIndex = 29;
+            this.gbxGenAndPrint.TabStop = false;
+            this.gbxGenAndPrint.Text = "Generate and Print an Exam/Quiz";
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Location = new System.Drawing.Point(465, 48);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerate.TabIndex = 29;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintExamsQuizes
+            // 
+            this.btnPrintExamsQuizes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPrintExamsQuizes.ForeColor = System.Drawing.Color.White;
+            this.btnPrintExamsQuizes.Location = new System.Drawing.Point(666, 45);
+            this.btnPrintExamsQuizes.Name = "btnPrintExamsQuizes";
+            this.btnPrintExamsQuizes.Size = new System.Drawing.Size(204, 28);
+            this.btnPrintExamsQuizes.TabIndex = 28;
+            this.btnPrintExamsQuizes.Text = "Print Generated Exam/Quiz";
+            this.btnPrintExamsQuizes.UseVisualStyleBackColor = false;
+            // 
+            // numUDCopies
+            // 
+            this.numUDCopies.Location = new System.Drawing.Point(562, 48);
+            this.numUDCopies.Name = "numUDCopies";
+            this.numUDCopies.Size = new System.Drawing.Size(82, 22);
+            this.numUDCopies.TabIndex = 24;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(562, 27);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(75, 16);
+            this.label22.TabIndex = 23;
+            this.label22.Text = "# of Copies";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(19, 27);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(226, 16);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Select a Profile to Generate and Print";
+            // 
+            // cboProfileToGenerate
+            // 
+            this.cboProfileToGenerate.FormattingEnabled = true;
+            this.cboProfileToGenerate.Items.AddRange(new object[] {
+            "Profile 1",
+            "Profile 2"});
+            this.cboProfileToGenerate.Location = new System.Drawing.Point(19, 47);
+            this.cboProfileToGenerate.Name = "cboProfileToGenerate";
+            this.cboProfileToGenerate.Size = new System.Drawing.Size(419, 24);
+            this.cboProfileToGenerate.TabIndex = 10;
+            // 
             // gbxProfiles
             // 
             this.gbxProfiles.Controls.Add(this.btnProfileNameDelete);
@@ -674,7 +745,7 @@
             // btnProfileNameDelete
             // 
             this.btnProfileNameDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfileNameDelete.Location = new System.Drawing.Point(456, 88);
+            this.btnProfileNameDelete.Location = new System.Drawing.Point(459, 42);
             this.btnProfileNameDelete.Name = "btnProfileNameDelete";
             this.btnProfileNameDelete.Size = new System.Drawing.Size(196, 28);
             this.btnProfileNameDelete.TabIndex = 14;
@@ -684,7 +755,7 @@
             // btnProfileNameClear
             // 
             this.btnProfileNameClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfileNameClear.Location = new System.Drawing.Point(674, 43);
+            this.btnProfileNameClear.Location = new System.Drawing.Point(674, 41);
             this.btnProfileNameClear.Name = "btnProfileNameClear";
             this.btnProfileNameClear.Size = new System.Drawing.Size(196, 28);
             this.btnProfileNameClear.TabIndex = 13;
@@ -694,7 +765,7 @@
             // btnProfileNameAddUpd
             // 
             this.btnProfileNameAddUpd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfileNameAddUpd.Location = new System.Drawing.Point(456, 43);
+            this.btnProfileNameAddUpd.Location = new System.Drawing.Point(459, 88);
             this.btnProfileNameAddUpd.Name = "btnProfileNameAddUpd";
             this.btnProfileNameAddUpd.Size = new System.Drawing.Size(196, 28);
             this.btnProfileNameAddUpd.TabIndex = 12;
@@ -722,9 +793,9 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(22, 25);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(98, 16);
+            this.label19.Size = new System.Drawing.Size(154, 16);
             this.label19.TabIndex = 9;
-            this.label19.Text = "Select a Profile";
+            this.label19.Text = "Select an Existing Profile";
             // 
             // cboProfileSelect
             // 
@@ -831,7 +902,6 @@
             this.label16.Size = new System.Drawing.Size(113, 16);
             this.label16.TabIndex = 20;
             this.label16.Text = "Question Difficulty";
-            this.label16.Click += new System.EventHandler(this.Label16_Click);
             // 
             // rbtnProfileItemDifficulty_E
             // 
@@ -922,77 +992,6 @@
             this.cboProfileTopic.Size = new System.Drawing.Size(204, 24);
             this.cboProfileTopic.TabIndex = 2;
             // 
-            // gbxGenAndPrint
-            // 
-            this.gbxGenAndPrint.Controls.Add(this.btnGenerate);
-            this.gbxGenAndPrint.Controls.Add(this.button1);
-            this.gbxGenAndPrint.Controls.Add(this.numericUpDown1);
-            this.gbxGenAndPrint.Controls.Add(this.label22);
-            this.gbxGenAndPrint.Controls.Add(this.label21);
-            this.gbxGenAndPrint.Controls.Add(this.cboProfileToGenerate);
-            this.gbxGenAndPrint.Location = new System.Drawing.Point(24, 442);
-            this.gbxGenAndPrint.Name = "gbxGenAndPrint";
-            this.gbxGenAndPrint.Size = new System.Drawing.Size(893, 87);
-            this.gbxGenAndPrint.TabIndex = 29;
-            this.gbxGenAndPrint.TabStop = false;
-            this.gbxGenAndPrint.Text = "Generate and Print";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(19, 27);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(226, 16);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Select a Profile to Generate and Print";
-            // 
-            // cboProfileToGenerate
-            // 
-            this.cboProfileToGenerate.FormattingEnabled = true;
-            this.cboProfileToGenerate.Items.AddRange(new object[] {
-            "Profile 1",
-            "Profile 2"});
-            this.cboProfileToGenerate.Location = new System.Drawing.Point(19, 47);
-            this.cboProfileToGenerate.Name = "cboProfileToGenerate";
-            this.cboProfileToGenerate.Size = new System.Drawing.Size(419, 24);
-            this.cboProfileToGenerate.TabIndex = 10;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(562, 48);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(82, 22);
-            this.numericUpDown1.TabIndex = 24;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(562, 27);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(75, 16);
-            this.label22.TabIndex = 23;
-            this.label22.Text = "# of Copies";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(666, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(204, 28);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Print Generated Exam/Quiz";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Location = new System.Drawing.Point(465, 48);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
-            this.btnGenerate.TabIndex = 29;
-            this.btnGenerate.Text = "Generate";
-            this.btnGenerate.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1018,15 +1017,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).EndInit();
             this.tabPageTests.ResumeLayout(false);
+            this.gbxGenAndPrint.ResumeLayout(false);
+            this.gbxGenAndPrint.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDCopies)).EndInit();
             this.gbxProfiles.ResumeLayout(false);
             this.gbxProfiles.PerformLayout();
             this.grpBX.ResumeLayout(false);
             this.grpBX.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).EndInit();
-            this.gbxGenAndPrint.ResumeLayout(false);
-            this.gbxGenAndPrint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1111,8 +1110,8 @@
         private System.Windows.Forms.DataGridView dgvProfileItems;
         private System.Windows.Forms.GroupBox gbxGenAndPrint;
         private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button btnPrintExamsQuizes;
+        private System.Windows.Forms.NumericUpDown numUDCopies;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cboProfileToGenerate;
