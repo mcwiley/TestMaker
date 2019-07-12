@@ -77,7 +77,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Questions = new System.Windows.Forms.DataGridView();
             this.tabPageTests = new System.Windows.Forms.TabPage();
+            this.gbxProfiles = new System.Windows.Forms.GroupBox();
+            this.btnProfileNameDelete = new System.Windows.Forms.Button();
+            this.btnProfileNameClear = new System.Windows.Forms.Button();
+            this.btnProfileNameAddUpd = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtProfileName = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cboProfileSelect = new System.Windows.Forms.ComboBox();
             this.grpBX = new System.Windows.Forms.GroupBox();
+            this.btnProfileItemDelete = new System.Windows.Forms.Button();
+            this.btnProfileItemClear = new System.Windows.Forms.Button();
+            this.btnProfileItemAddUpd = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dgvProfileItems = new System.Windows.Forms.DataGridView();
             this.numUDQuestions = new System.Windows.Forms.NumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -90,19 +103,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbpProfileSubTopic = new System.Windows.Forms.ComboBox();
             this.cboProfileTopic = new System.Windows.Forms.ComboBox();
-            this.dgvProfileItems = new System.Windows.Forms.DataGridView();
-            this.label18 = new System.Windows.Forms.Label();
-            this.btnProfileItemAddUpd = new System.Windows.Forms.Button();
-            this.btnProfileItemClear = new System.Windows.Forms.Button();
-            this.gbxProfiles = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.cboProfileSelect = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtProfileName = new System.Windows.Forms.TextBox();
-            this.btnProfileNameAddUpd = new System.Windows.Forms.Button();
-            this.btnProfileNameClear = new System.Windows.Forms.Button();
-            this.btnProfileNameDelete = new System.Windows.Forms.Button();
-            this.btnProfileItemDelete = new System.Windows.Forms.Button();
+            this.gbxGenAndPrint = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cboProfileToGenerate = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnGenerate = new System.Windows.Forms.Button();
             this.tabTest.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).BeginInit();
@@ -113,10 +120,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).BeginInit();
             this.tabPageTests.SuspendLayout();
-            this.grpBX.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).BeginInit();
             this.gbxProfiles.SuspendLayout();
+            this.grpBX.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).BeginInit();
+            this.gbxGenAndPrint.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -635,6 +644,7 @@
             // 
             // tabPageTests
             // 
+            this.tabPageTests.Controls.Add(this.gbxGenAndPrint);
             this.tabPageTests.Controls.Add(this.gbxProfiles);
             this.tabPageTests.Controls.Add(this.grpBX);
             this.tabPageTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -644,6 +654,88 @@
             this.tabPageTests.TabIndex = 2;
             this.tabPageTests.Text = "Tests / Quizes";
             this.tabPageTests.UseVisualStyleBackColor = true;
+            // 
+            // gbxProfiles
+            // 
+            this.gbxProfiles.Controls.Add(this.btnProfileNameDelete);
+            this.gbxProfiles.Controls.Add(this.btnProfileNameClear);
+            this.gbxProfiles.Controls.Add(this.btnProfileNameAddUpd);
+            this.gbxProfiles.Controls.Add(this.label20);
+            this.gbxProfiles.Controls.Add(this.txtProfileName);
+            this.gbxProfiles.Controls.Add(this.label19);
+            this.gbxProfiles.Controls.Add(this.cboProfileSelect);
+            this.gbxProfiles.Location = new System.Drawing.Point(24, 26);
+            this.gbxProfiles.Name = "gbxProfiles";
+            this.gbxProfiles.Size = new System.Drawing.Size(893, 133);
+            this.gbxProfiles.TabIndex = 9;
+            this.gbxProfiles.TabStop = false;
+            this.gbxProfiles.Text = "Profile List";
+            // 
+            // btnProfileNameDelete
+            // 
+            this.btnProfileNameDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfileNameDelete.Location = new System.Drawing.Point(456, 88);
+            this.btnProfileNameDelete.Name = "btnProfileNameDelete";
+            this.btnProfileNameDelete.Size = new System.Drawing.Size(196, 28);
+            this.btnProfileNameDelete.TabIndex = 14;
+            this.btnProfileNameDelete.Text = "Delete Profile";
+            this.btnProfileNameDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnProfileNameClear
+            // 
+            this.btnProfileNameClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfileNameClear.Location = new System.Drawing.Point(674, 43);
+            this.btnProfileNameClear.Name = "btnProfileNameClear";
+            this.btnProfileNameClear.Size = new System.Drawing.Size(196, 28);
+            this.btnProfileNameClear.TabIndex = 13;
+            this.btnProfileNameClear.Text = "Clear Profile Name";
+            this.btnProfileNameClear.UseVisualStyleBackColor = true;
+            // 
+            // btnProfileNameAddUpd
+            // 
+            this.btnProfileNameAddUpd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfileNameAddUpd.Location = new System.Drawing.Point(456, 43);
+            this.btnProfileNameAddUpd.Name = "btnProfileNameAddUpd";
+            this.btnProfileNameAddUpd.Size = new System.Drawing.Size(196, 28);
+            this.btnProfileNameAddUpd.TabIndex = 12;
+            this.btnProfileNameAddUpd.Text = "Add New Profile";
+            this.btnProfileNameAddUpd.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(19, 72);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(86, 16);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "Profile Name";
+            // 
+            // txtProfileName
+            // 
+            this.txtProfileName.Location = new System.Drawing.Point(22, 91);
+            this.txtProfileName.Name = "txtProfileName";
+            this.txtProfileName.Size = new System.Drawing.Size(419, 22);
+            this.txtProfileName.TabIndex = 10;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(22, 25);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(98, 16);
+            this.label19.TabIndex = 9;
+            this.label19.Text = "Select a Profile";
+            // 
+            // cboProfileSelect
+            // 
+            this.cboProfileSelect.FormattingEnabled = true;
+            this.cboProfileSelect.Items.AddRange(new object[] {
+            "Profile 1",
+            "Profile 2"});
+            this.cboProfileSelect.Location = new System.Drawing.Point(22, 45);
+            this.cboProfileSelect.Name = "cboProfileSelect";
+            this.cboProfileSelect.Size = new System.Drawing.Size(419, 24);
+            this.cboProfileSelect.TabIndex = 8;
             // 
             // grpBX
             // 
@@ -664,135 +756,39 @@
             this.grpBX.Controls.Add(this.label4);
             this.grpBX.Controls.Add(this.cbpProfileSubTopic);
             this.grpBX.Controls.Add(this.cboProfileTopic);
-            this.grpBX.Location = new System.Drawing.Point(51, 178);
+            this.grpBX.Location = new System.Drawing.Point(24, 178);
             this.grpBX.Name = "grpBX";
-            this.grpBX.Size = new System.Drawing.Size(837, 351);
+            this.grpBX.Size = new System.Drawing.Size(893, 239);
             this.grpBX.TabIndex = 5;
             this.grpBX.TabStop = false;
             this.grpBX.Text = "Profile Item Selection";
             // 
-            // numUDQuestions
+            // btnProfileItemDelete
             // 
-            this.numUDQuestions.Location = new System.Drawing.Point(621, 104);
-            this.numUDQuestions.Name = "numUDQuestions";
-            this.numUDQuestions.Size = new System.Drawing.Size(82, 22);
-            this.numUDQuestions.TabIndex = 22;
+            this.btnProfileItemDelete.Location = new System.Drawing.Point(456, 189);
+            this.btnProfileItemDelete.Name = "btnProfileItemDelete";
+            this.btnProfileItemDelete.Size = new System.Drawing.Size(204, 28);
+            this.btnProfileItemDelete.TabIndex = 27;
+            this.btnProfileItemDelete.Text = "Delete Profile Item";
+            this.btnProfileItemDelete.UseVisualStyleBackColor = true;
             // 
-            // label17
+            // btnProfileItemClear
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(618, 81);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 16);
-            this.label17.TabIndex = 21;
-            this.label17.Text = "# of Question";
+            this.btnProfileItemClear.Location = new System.Drawing.Point(682, 144);
+            this.btnProfileItemClear.Name = "btnProfileItemClear";
+            this.btnProfileItemClear.Size = new System.Drawing.Size(188, 28);
+            this.btnProfileItemClear.TabIndex = 26;
+            this.btnProfileItemClear.Text = "Clear Profile Item";
+            this.btnProfileItemClear.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // btnProfileItemAddUpd
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(618, 25);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(113, 16);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "Question Difficulty";
-            this.label16.Click += new System.EventHandler(this.Label16_Click);
-            // 
-            // rbtnProfileItemDifficulty_E
-            // 
-            this.rbtnProfileItemDifficulty_E.AutoSize = true;
-            this.rbtnProfileItemDifficulty_E.Location = new System.Drawing.Point(776, 48);
-            this.rbtnProfileItemDifficulty_E.Name = "rbtnProfileItemDifficulty_E";
-            this.rbtnProfileItemDifficulty_E.Size = new System.Drawing.Size(33, 20);
-            this.rbtnProfileItemDifficulty_E.TabIndex = 19;
-            this.rbtnProfileItemDifficulty_E.TabStop = true;
-            this.rbtnProfileItemDifficulty_E.Text = "5";
-            this.rbtnProfileItemDifficulty_E.UseVisualStyleBackColor = true;
-            // 
-            // rbtnProfileItemDifficulty_D
-            // 
-            this.rbtnProfileItemDifficulty_D.AutoSize = true;
-            this.rbtnProfileItemDifficulty_D.Location = new System.Drawing.Point(737, 48);
-            this.rbtnProfileItemDifficulty_D.Name = "rbtnProfileItemDifficulty_D";
-            this.rbtnProfileItemDifficulty_D.Size = new System.Drawing.Size(33, 20);
-            this.rbtnProfileItemDifficulty_D.TabIndex = 18;
-            this.rbtnProfileItemDifficulty_D.TabStop = true;
-            this.rbtnProfileItemDifficulty_D.Text = "4";
-            this.rbtnProfileItemDifficulty_D.UseVisualStyleBackColor = true;
-            // 
-            // rbtnProfileItemDifficulty_C
-            // 
-            this.rbtnProfileItemDifficulty_C.AutoSize = true;
-            this.rbtnProfileItemDifficulty_C.Location = new System.Drawing.Point(698, 48);
-            this.rbtnProfileItemDifficulty_C.Name = "rbtnProfileItemDifficulty_C";
-            this.rbtnProfileItemDifficulty_C.Size = new System.Drawing.Size(33, 20);
-            this.rbtnProfileItemDifficulty_C.TabIndex = 17;
-            this.rbtnProfileItemDifficulty_C.TabStop = true;
-            this.rbtnProfileItemDifficulty_C.Text = "3";
-            this.rbtnProfileItemDifficulty_C.UseVisualStyleBackColor = true;
-            // 
-            // rbtnProfileItemDifficulty_B
-            // 
-            this.rbtnProfileItemDifficulty_B.AutoSize = true;
-            this.rbtnProfileItemDifficulty_B.Location = new System.Drawing.Point(659, 48);
-            this.rbtnProfileItemDifficulty_B.Name = "rbtnProfileItemDifficulty_B";
-            this.rbtnProfileItemDifficulty_B.Size = new System.Drawing.Size(33, 20);
-            this.rbtnProfileItemDifficulty_B.TabIndex = 16;
-            this.rbtnProfileItemDifficulty_B.TabStop = true;
-            this.rbtnProfileItemDifficulty_B.Text = "2";
-            this.rbtnProfileItemDifficulty_B.UseVisualStyleBackColor = true;
-            // 
-            // rbtnProfileItemDifficulty_A
-            // 
-            this.rbtnProfileItemDifficulty_A.AutoSize = true;
-            this.rbtnProfileItemDifficulty_A.Location = new System.Drawing.Point(620, 48);
-            this.rbtnProfileItemDifficulty_A.Name = "rbtnProfileItemDifficulty_A";
-            this.rbtnProfileItemDifficulty_A.Size = new System.Drawing.Size(33, 20);
-            this.rbtnProfileItemDifficulty_A.TabIndex = 15;
-            this.rbtnProfileItemDifficulty_A.TabStop = true;
-            this.rbtnProfileItemDifficulty_A.Text = "1";
-            this.rbtnProfileItemDifficulty_A.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(387, 81);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(108, 16);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "SubTopic Select";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(387, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Topic Select";
-            // 
-            // cbpProfileSubTopic
-            // 
-            this.cbpProfileSubTopic.FormattingEnabled = true;
-            this.cbpProfileSubTopic.Location = new System.Drawing.Point(387, 104);
-            this.cbpProfileSubTopic.Name = "cbpProfileSubTopic";
-            this.cbpProfileSubTopic.Size = new System.Drawing.Size(212, 24);
-            this.cbpProfileSubTopic.TabIndex = 3;
-            // 
-            // cboProfileTopic
-            // 
-            this.cboProfileTopic.FormattingEnabled = true;
-            this.cboProfileTopic.Location = new System.Drawing.Point(387, 48);
-            this.cboProfileTopic.Name = "cboProfileTopic";
-            this.cboProfileTopic.Size = new System.Drawing.Size(212, 24);
-            this.cboProfileTopic.TabIndex = 2;
-            // 
-            // dgvProfileItems
-            // 
-            this.dgvProfileItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProfileItems.Location = new System.Drawing.Point(22, 48);
-            this.dgvProfileItems.Name = "dgvProfileItems";
-            this.dgvProfileItems.Size = new System.Drawing.Size(342, 280);
-            this.dgvProfileItems.TabIndex = 23;
+            this.btnProfileItemAddUpd.Location = new System.Drawing.Point(456, 144);
+            this.btnProfileItemAddUpd.Name = "btnProfileItemAddUpd";
+            this.btnProfileItemAddUpd.Size = new System.Drawing.Size(204, 28);
+            this.btnProfileItemAddUpd.TabIndex = 25;
+            this.btnProfileItemAddUpd.Text = "Add New Profile Item";
+            this.btnProfileItemAddUpd.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -803,114 +799,199 @@
             this.label18.TabIndex = 24;
             this.label18.Text = "Profile Items List";
             // 
-            // btnProfileItemAddUpd
+            // dgvProfileItems
             // 
-            this.btnProfileItemAddUpd.Location = new System.Drawing.Point(387, 174);
-            this.btnProfileItemAddUpd.Name = "btnProfileItemAddUpd";
-            this.btnProfileItemAddUpd.Size = new System.Drawing.Size(196, 28);
-            this.btnProfileItemAddUpd.TabIndex = 25;
-            this.btnProfileItemAddUpd.Text = "Add New Profile Item";
-            this.btnProfileItemAddUpd.UseVisualStyleBackColor = true;
+            this.dgvProfileItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProfileItems.Location = new System.Drawing.Point(22, 48);
+            this.dgvProfileItems.Name = "dgvProfileItems";
+            this.dgvProfileItems.Size = new System.Drawing.Size(419, 169);
+            this.dgvProfileItems.TabIndex = 23;
             // 
-            // btnProfileItemClear
+            // numUDQuestions
             // 
-            this.btnProfileItemClear.Location = new System.Drawing.Point(605, 174);
-            this.btnProfileItemClear.Name = "btnProfileItemClear";
-            this.btnProfileItemClear.Size = new System.Drawing.Size(196, 28);
-            this.btnProfileItemClear.TabIndex = 26;
-            this.btnProfileItemClear.Text = "Clear Profile Item";
-            this.btnProfileItemClear.UseVisualStyleBackColor = true;
+            this.numUDQuestions.Location = new System.Drawing.Point(682, 104);
+            this.numUDQuestions.Name = "numUDQuestions";
+            this.numUDQuestions.Size = new System.Drawing.Size(82, 22);
+            this.numUDQuestions.TabIndex = 22;
             // 
-            // gbxProfiles
+            // label17
             // 
-            this.gbxProfiles.Controls.Add(this.btnProfileNameDelete);
-            this.gbxProfiles.Controls.Add(this.btnProfileNameClear);
-            this.gbxProfiles.Controls.Add(this.btnProfileNameAddUpd);
-            this.gbxProfiles.Controls.Add(this.label20);
-            this.gbxProfiles.Controls.Add(this.txtProfileName);
-            this.gbxProfiles.Controls.Add(this.label19);
-            this.gbxProfiles.Controls.Add(this.cboProfileSelect);
-            this.gbxProfiles.Location = new System.Drawing.Point(51, 26);
-            this.gbxProfiles.Name = "gbxProfiles";
-            this.gbxProfiles.Size = new System.Drawing.Size(837, 133);
-            this.gbxProfiles.TabIndex = 9;
-            this.gbxProfiles.TabStop = false;
-            this.gbxProfiles.Text = "Profile List";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(679, 81);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 16);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "# of Question";
             // 
-            // label19
+            // label16
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(19, 27);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(98, 16);
-            this.label19.TabIndex = 9;
-            this.label19.Text = "Select a Profile";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(679, 25);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(113, 16);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Question Difficulty";
+            this.label16.Click += new System.EventHandler(this.Label16_Click);
             // 
-            // cboProfileSelect
+            // rbtnProfileItemDifficulty_E
             // 
-            this.cboProfileSelect.FormattingEnabled = true;
-            this.cboProfileSelect.Items.AddRange(new object[] {
+            this.rbtnProfileItemDifficulty_E.AutoSize = true;
+            this.rbtnProfileItemDifficulty_E.Location = new System.Drawing.Point(837, 48);
+            this.rbtnProfileItemDifficulty_E.Name = "rbtnProfileItemDifficulty_E";
+            this.rbtnProfileItemDifficulty_E.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_E.TabIndex = 19;
+            this.rbtnProfileItemDifficulty_E.TabStop = true;
+            this.rbtnProfileItemDifficulty_E.Text = "5";
+            this.rbtnProfileItemDifficulty_E.UseVisualStyleBackColor = true;
+            // 
+            // rbtnProfileItemDifficulty_D
+            // 
+            this.rbtnProfileItemDifficulty_D.AutoSize = true;
+            this.rbtnProfileItemDifficulty_D.Location = new System.Drawing.Point(798, 48);
+            this.rbtnProfileItemDifficulty_D.Name = "rbtnProfileItemDifficulty_D";
+            this.rbtnProfileItemDifficulty_D.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_D.TabIndex = 18;
+            this.rbtnProfileItemDifficulty_D.TabStop = true;
+            this.rbtnProfileItemDifficulty_D.Text = "4";
+            this.rbtnProfileItemDifficulty_D.UseVisualStyleBackColor = true;
+            // 
+            // rbtnProfileItemDifficulty_C
+            // 
+            this.rbtnProfileItemDifficulty_C.AutoSize = true;
+            this.rbtnProfileItemDifficulty_C.Location = new System.Drawing.Point(759, 48);
+            this.rbtnProfileItemDifficulty_C.Name = "rbtnProfileItemDifficulty_C";
+            this.rbtnProfileItemDifficulty_C.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_C.TabIndex = 17;
+            this.rbtnProfileItemDifficulty_C.TabStop = true;
+            this.rbtnProfileItemDifficulty_C.Text = "3";
+            this.rbtnProfileItemDifficulty_C.UseVisualStyleBackColor = true;
+            // 
+            // rbtnProfileItemDifficulty_B
+            // 
+            this.rbtnProfileItemDifficulty_B.AutoSize = true;
+            this.rbtnProfileItemDifficulty_B.Location = new System.Drawing.Point(720, 48);
+            this.rbtnProfileItemDifficulty_B.Name = "rbtnProfileItemDifficulty_B";
+            this.rbtnProfileItemDifficulty_B.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_B.TabIndex = 16;
+            this.rbtnProfileItemDifficulty_B.TabStop = true;
+            this.rbtnProfileItemDifficulty_B.Text = "2";
+            this.rbtnProfileItemDifficulty_B.UseVisualStyleBackColor = true;
+            // 
+            // rbtnProfileItemDifficulty_A
+            // 
+            this.rbtnProfileItemDifficulty_A.AutoSize = true;
+            this.rbtnProfileItemDifficulty_A.Location = new System.Drawing.Point(681, 48);
+            this.rbtnProfileItemDifficulty_A.Name = "rbtnProfileItemDifficulty_A";
+            this.rbtnProfileItemDifficulty_A.Size = new System.Drawing.Size(33, 20);
+            this.rbtnProfileItemDifficulty_A.TabIndex = 15;
+            this.rbtnProfileItemDifficulty_A.TabStop = true;
+            this.rbtnProfileItemDifficulty_A.Text = "1";
+            this.rbtnProfileItemDifficulty_A.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(456, 81);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 16);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "SubTopic Select";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(456, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 16);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Topic Select";
+            // 
+            // cbpProfileSubTopic
+            // 
+            this.cbpProfileSubTopic.FormattingEnabled = true;
+            this.cbpProfileSubTopic.Location = new System.Drawing.Point(456, 104);
+            this.cbpProfileSubTopic.Name = "cbpProfileSubTopic";
+            this.cbpProfileSubTopic.Size = new System.Drawing.Size(204, 24);
+            this.cbpProfileSubTopic.TabIndex = 3;
+            // 
+            // cboProfileTopic
+            // 
+            this.cboProfileTopic.FormattingEnabled = true;
+            this.cboProfileTopic.Location = new System.Drawing.Point(456, 48);
+            this.cboProfileTopic.Name = "cboProfileTopic";
+            this.cboProfileTopic.Size = new System.Drawing.Size(204, 24);
+            this.cboProfileTopic.TabIndex = 2;
+            // 
+            // gbxGenAndPrint
+            // 
+            this.gbxGenAndPrint.Controls.Add(this.btnGenerate);
+            this.gbxGenAndPrint.Controls.Add(this.button1);
+            this.gbxGenAndPrint.Controls.Add(this.numericUpDown1);
+            this.gbxGenAndPrint.Controls.Add(this.label22);
+            this.gbxGenAndPrint.Controls.Add(this.label21);
+            this.gbxGenAndPrint.Controls.Add(this.cboProfileToGenerate);
+            this.gbxGenAndPrint.Location = new System.Drawing.Point(24, 442);
+            this.gbxGenAndPrint.Name = "gbxGenAndPrint";
+            this.gbxGenAndPrint.Size = new System.Drawing.Size(893, 87);
+            this.gbxGenAndPrint.TabIndex = 29;
+            this.gbxGenAndPrint.TabStop = false;
+            this.gbxGenAndPrint.Text = "Generate and Print";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(19, 27);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(226, 16);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Select a Profile to Generate and Print";
+            // 
+            // cboProfileToGenerate
+            // 
+            this.cboProfileToGenerate.FormattingEnabled = true;
+            this.cboProfileToGenerate.Items.AddRange(new object[] {
             "Profile 1",
             "Profile 2"});
-            this.cboProfileSelect.Location = new System.Drawing.Point(22, 47);
-            this.cboProfileSelect.Name = "cboProfileSelect";
-            this.cboProfileSelect.Size = new System.Drawing.Size(342, 24);
-            this.cboProfileSelect.TabIndex = 8;
+            this.cboProfileToGenerate.Location = new System.Drawing.Point(19, 47);
+            this.cboProfileToGenerate.Name = "cboProfileToGenerate";
+            this.cboProfileToGenerate.Size = new System.Drawing.Size(419, 24);
+            this.cboProfileToGenerate.TabIndex = 10;
             // 
-            // label20
+            // numericUpDown1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(19, 76);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(86, 16);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "Profile Name";
+            this.numericUpDown1.Location = new System.Drawing.Point(562, 48);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(82, 22);
+            this.numericUpDown1.TabIndex = 24;
             // 
-            // txtProfileName
+            // label22
             // 
-            this.txtProfileName.Location = new System.Drawing.Point(22, 95);
-            this.txtProfileName.Name = "txtProfileName";
-            this.txtProfileName.Size = new System.Drawing.Size(342, 22);
-            this.txtProfileName.TabIndex = 10;
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(562, 27);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(75, 16);
+            this.label22.TabIndex = 23;
+            this.label22.Text = "# of Copies";
             // 
-            // btnProfileNameAddUpd
+            // button1
             // 
-            this.btnProfileNameAddUpd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfileNameAddUpd.Location = new System.Drawing.Point(387, 47);
-            this.btnProfileNameAddUpd.Name = "btnProfileNameAddUpd";
-            this.btnProfileNameAddUpd.Size = new System.Drawing.Size(196, 28);
-            this.btnProfileNameAddUpd.TabIndex = 12;
-            this.btnProfileNameAddUpd.Text = "Add New Profile";
-            this.btnProfileNameAddUpd.UseVisualStyleBackColor = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(666, 45);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(204, 28);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Print Generated Exam/Quiz";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnProfileNameClear
+            // btnGenerate
             // 
-            this.btnProfileNameClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfileNameClear.Location = new System.Drawing.Point(605, 47);
-            this.btnProfileNameClear.Name = "btnProfileNameClear";
-            this.btnProfileNameClear.Size = new System.Drawing.Size(196, 28);
-            this.btnProfileNameClear.TabIndex = 13;
-            this.btnProfileNameClear.Text = "Clear Profile Name";
-            this.btnProfileNameClear.UseVisualStyleBackColor = true;
-            // 
-            // btnProfileNameDelete
-            // 
-            this.btnProfileNameDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfileNameDelete.Location = new System.Drawing.Point(387, 92);
-            this.btnProfileNameDelete.Name = "btnProfileNameDelete";
-            this.btnProfileNameDelete.Size = new System.Drawing.Size(196, 28);
-            this.btnProfileNameDelete.TabIndex = 14;
-            this.btnProfileNameDelete.Text = "Delete Profile";
-            this.btnProfileNameDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnProfileItemDelete
-            // 
-            this.btnProfileItemDelete.Location = new System.Drawing.Point(390, 219);
-            this.btnProfileItemDelete.Name = "btnProfileItemDelete";
-            this.btnProfileItemDelete.Size = new System.Drawing.Size(196, 28);
-            this.btnProfileItemDelete.TabIndex = 27;
-            this.btnProfileItemDelete.Text = "Delete Profile Item";
-            this.btnProfileItemDelete.UseVisualStyleBackColor = true;
+            this.btnGenerate.Location = new System.Drawing.Point(465, 48);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerate.TabIndex = 29;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -937,12 +1018,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quest_Topics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Questions)).EndInit();
             this.tabPageTests.ResumeLayout(false);
-            this.grpBX.ResumeLayout(false);
-            this.grpBX.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).EndInit();
             this.gbxProfiles.ResumeLayout(false);
             this.gbxProfiles.PerformLayout();
+            this.grpBX.ResumeLayout(false);
+            this.grpBX.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).EndInit();
+            this.gbxGenAndPrint.ResumeLayout(false);
+            this.gbxGenAndPrint.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1025,6 +1109,13 @@
         private System.Windows.Forms.Button btnProfileItemAddUpd;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataGridView dgvProfileItems;
+        private System.Windows.Forms.GroupBox gbxGenAndPrint;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cboProfileToGenerate;
     }
 }
 
