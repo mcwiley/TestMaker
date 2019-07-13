@@ -79,7 +79,6 @@
             this.tabPageTests = new System.Windows.Forms.TabPage();
             this.gbxGenAndPrint = new System.Windows.Forms.GroupBox();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.btnPrintExamsQuizes = new System.Windows.Forms.Button();
             this.numUDCopies = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -658,7 +657,6 @@
             // gbxGenAndPrint
             // 
             this.gbxGenAndPrint.Controls.Add(this.btnGenerate);
-            this.gbxGenAndPrint.Controls.Add(this.btnPrintExamsQuizes);
             this.gbxGenAndPrint.Controls.Add(this.numUDCopies);
             this.gbxGenAndPrint.Controls.Add(this.label22);
             this.gbxGenAndPrint.Controls.Add(this.label21);
@@ -672,37 +670,31 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(465, 48);
+            this.btnGenerate.AutoSize = true;
+            this.btnGenerate.BackColor = System.Drawing.Color.Green;
+            this.btnGenerate.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerate.ForeColor = System.Drawing.Color.White;
+            this.btnGenerate.Location = new System.Drawing.Point(572, 44);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerate.Size = new System.Drawing.Size(298, 30);
             this.btnGenerate.TabIndex = 29;
-            this.btnGenerate.Text = "Generate";
-            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Text = "Generate and Print the Exam or Quiz";
+            this.btnGenerate.UseVisualStyleBackColor = false;
             this.btnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
-            // 
-            // btnPrintExamsQuizes
-            // 
-            this.btnPrintExamsQuizes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnPrintExamsQuizes.ForeColor = System.Drawing.Color.White;
-            this.btnPrintExamsQuizes.Location = new System.Drawing.Point(666, 45);
-            this.btnPrintExamsQuizes.Name = "btnPrintExamsQuizes";
-            this.btnPrintExamsQuizes.Size = new System.Drawing.Size(204, 28);
-            this.btnPrintExamsQuizes.TabIndex = 28;
-            this.btnPrintExamsQuizes.Text = "Print Generated Exam/Quiz";
-            this.btnPrintExamsQuizes.UseVisualStyleBackColor = false;
             // 
             // numUDCopies
             // 
+            this.numUDCopies.AutoSize = true;
             this.numUDCopies.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numUDCopies.Location = new System.Drawing.Point(562, 48);
+            this.numUDCopies.Location = new System.Drawing.Point(476, 48);
             this.numUDCopies.Name = "numUDCopies";
-            this.numUDCopies.Size = new System.Drawing.Size(82, 22);
+            this.numUDCopies.Size = new System.Drawing.Size(68, 22);
             this.numUDCopies.TabIndex = 24;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(562, 27);
+            this.label22.Location = new System.Drawing.Point(476, 27);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(75, 16);
             this.label22.TabIndex = 23;
@@ -1112,7 +1104,6 @@
         private System.Windows.Forms.DataGridView dgvProfileItems;
         private System.Windows.Forms.GroupBox gbxGenAndPrint;
         private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Button btnPrintExamsQuizes;
         private System.Windows.Forms.NumericUpDown numUDCopies;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;

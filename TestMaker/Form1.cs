@@ -577,11 +577,43 @@ namespace TestMaker
 
             using (StreamWriter sr = File.AppendText(path))
             {
-                for(int nq = 0; nq < 10; nq++)
+                string[] words = { "anemone", "wagstaff", "man", "the", "for", "and", "a", "with", "bird", "fox", "bulldog", "pug", "mutt" };
+
+                for (int nq = 0; nq < 10; nq++)
                 {
-                    sr.WriteLine("Topic: 1001 / SubTopic: 1002");
-                    sr.WriteLine("1)  " + "TestMaker Question?");
-                    sr.WriteLine("");
+                    sr.WriteLine("     Topic: 1001 / SubTopic: 1002");
+
+                    RandomText text = new RandomText(words);
+                    text.AddContentParagraphs(1, 2, 4, 8, 12);
+                    string content = text.Content;
+
+                    string[] wrds = content.Split(' ');
+
+                    string sline = "";
+
+                    bool bfrst = true;
+
+                    for (int w = 0; w < wrds.Count(); w++)
+                    {
+                        sline = (sline + wrds[w]) + " ";
+                        if(sline.Length > 65)
+                        {
+                            string qhdr = "     ";
+                            if (bfrst)
+                            {
+                                qhdr = General.Left((nq + 1).ToString() + ")     ",5);
+                                bfrst = false;
+                            }
+                            sr.WriteLine(qhdr + sline);
+                            sline = "";
+                        }
+                    }
+
+                    if(sline.Length > 0)
+                    {
+                        sr.WriteLine("     " + sline);
+                    }
+                    
                 }
 
                 sr.Close();
