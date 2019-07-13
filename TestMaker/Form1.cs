@@ -17,10 +17,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace TestMaker
 {
@@ -31,6 +33,11 @@ namespace TestMaker
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class Form1 : Form
     {
+        string randomFilename;
+        private Font printFont;
+        private StreamReader streamToPrint;
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Form1"/> class.
         /// </summary>
@@ -561,6 +568,89 @@ namespace TestMaker
             cboProfileToGenerate.DisplayMember = "Name";
             cboProfileToGenerate.DataSource = dsProfileNames;
         }
+
+        private void BtnGenerate_Click(object sender, EventArgs e)
+        {
+            randomFilename = "C:\\temp\\" + Guid.NewGuid().ToString() + ".txt";
+
+            string path = randomFilename;
+
+            using (StreamWriter sr = File.AppendText(path))
+            {
+                for(int nq = 0; nq < 10; nq++)
+                {
+                    sr.WriteLine("Topic: 1001 / SubTopic: 1002");
+                    sr.WriteLine("1)  " + "TestMaker Question?");
+                    sr.WriteLine("");
+                }
+
+                sr.Close();
+
+                PrintGeneratedExam(randomFilename);
+
+            }
+        }
+
+
+        private void PrintGeneratedExam(string sPrintFilename)
+        {
+            try
+            {
+                streamToPrint = new StreamReader
+                   (sPrintFilename);
+                try
+                {
+                    printFont = new Font("Courier New", 10);
+                    PrintDocument pd = new PrintDocument();
+                    if (numUDCopies.Value < 1) { numUDCopies.Value = 1; }
+                    pd.PrinterSettings.Copies = Convert.ToInt16(numUDCopies.Value);
+                    pd.PrintPage += new PrintPageEventHandler
+                       (this.pd_PrintPage);
+                    pd.Print();
+                }
+                finally
+                {
+                    streamToPrint.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurred Printing:  " + ex.Message);
+            }
+        }
+
+        private void pd_PrintPage(object sender, PrintPageEventArgs ev)
+        {
+            float linesPerPage = 0;
+            float yPos = 0;
+            int count = 0;
+            float leftMargin = ev.MarginBounds.Left;
+            float topMargin = ev.MarginBounds.Top;
+            string line = null;
+
+            // Calculate the number of lines per page.
+            linesPerPage = ev.MarginBounds.Height /
+               printFont.GetHeight(ev.Graphics);
+
+            // Print each line of the file.
+            while (count < linesPerPage &&
+               ((line = streamToPrint.ReadLine()) != null))
+            {
+                yPos = topMargin + (count *
+                   printFont.GetHeight(ev.Graphics));
+                ev.Graphics.DrawString(line, printFont, Brushes.Black,
+                   leftMargin, yPos, new StringFormat());
+                count++;
+            }
+
+            // If more lines exist, print another page.
+            if (line != null)
+                ev.HasMorePages = true;
+            else
+                ev.HasMorePages = false;
+        }
+
+
     }
 
 

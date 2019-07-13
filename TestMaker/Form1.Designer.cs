@@ -678,6 +678,7 @@
             this.btnGenerate.TabIndex = 29;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
             // 
             // btnPrintExamsQuizes
             // 
@@ -692,6 +693,7 @@
             // 
             // numUDCopies
             // 
+            this.numUDCopies.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numUDCopies.Location = new System.Drawing.Point(562, 48);
             this.numUDCopies.Name = "numUDCopies";
             this.numUDCopies.Size = new System.Drawing.Size(82, 22);
