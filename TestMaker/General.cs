@@ -61,13 +61,12 @@ namespace TestMaker
 
             try
             {
-                DataSet ds = new DataSet();
                 SqlConnection connection = new SqlConnection(General.myDBConn);
-                SqlCommand command;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                command = new SqlCommand(daSQL, connection);
-                adapter.SelectCommand = command;
-                adapter.Fill(ds);
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter(daSQL, connection);
+                adapter.Fill(ds, "Data_Table");
+
                 rslt = true;
             }
             catch

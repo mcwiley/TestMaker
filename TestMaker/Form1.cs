@@ -23,6 +23,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using System.Windows.Controls;
 
 namespace TestMaker
 {
@@ -54,6 +55,7 @@ namespace TestMaker
         private void Form1_Load(object sender, EventArgs e)
         {
             FillTopics(1);
+            FillProfiles();
         }
 
         /// <summary>
@@ -555,18 +557,20 @@ namespace TestMaker
 
         private void FillProfiles()
         {
+            dgv_Profiles.DataSource = null;
             DataSet dsProfileNames = new DataSet();
-            dsProfileNames = General.GetData("Select ID, Name From ProfileNames Order By Name");
+            dsProfileNames = General.GetData("Select ID, Name From dbo.ProfileNames Order By Name");
 
-            cboProfileSelect.DataSource = null;
-            cboProfileSelect.ValueMember = "ID";
-            cboProfileSelect.DisplayMember = "Name";
-            cboProfileSelect.DataSource = dsProfileNames;
+            dgv_Profiles.DataSource = dsProfileNames;
+            dgv_Profiles.DataMember = "Data_Table";
 
-            cboProfileToGenerate.DataSource = null;
-            cboProfileToGenerate.ValueMember = "ID";
-            cboProfileToGenerate.DisplayMember = "Name";
-            cboProfileToGenerate.DataSource = dsProfileNames;
+            dgv_Profiles.RowHeadersVisible = false;
+            dgv_Profiles.Columns[0].HeaderText = "ID";
+            dgv_Profiles.Columns[1].HeaderText = "Name";
+            dgv_Profiles.Columns[0].Width = 100;
+            dgv_Profiles.Columns[1].Width = dgv_Profiles.Width - 120;
+            dgv_Profiles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
         }
 
         private void BtnGenerate_Click(object sender, EventArgs e)
@@ -577,9 +581,9 @@ namespace TestMaker
 
             using (StreamWriter sr = File.AppendText(path))
             {
-                string[] words = { "anemone", "wagstaff", "man", "the", "for", "and", "a", "with", "bird", "fox", "bulldog", "pug", "mutt" };
+                string[] words = { "anemone", "wagstaff", "man", "the", "for", "and", "a", "with", "bird", "fox", "bulldog", "pug", "mutt", "kitten", "an","snake","woman","Judy","Rob","Mike" };
 
-                for (int nq = 0; nq < 10; nq++)
+                for (int nq = 0; nq < 20; nq++)
                 {
                     sr.WriteLine("     Topic: 1001 / SubTopic: 1002");
 
@@ -588,6 +592,30 @@ namespace TestMaker
                     string content = text.Content;
 
                     string[] wrds = content.Split(' ');
+
+
+
+
+                    string ssline = "";
+                    int linecount = 0;
+                    for (int w = 0; w < wrds.Count(); w++)
+                    {
+                        ssline = (ssline + wrds[w]) + " ";
+                        if (ssline.Length > 65)
+                        {
+                            linecount++;
+                            ssline = "";
+                        }
+                    }
+                    if (ssline.Length > 0)
+                    {
+                        linecount++;
+                    }
+                    if((linecount + 1) > 55)
+                    {
+                        sr.WriteLine("\f");
+                    }
+
 
                     string sline = "";
 
@@ -619,6 +647,8 @@ namespace TestMaker
                 sr.Close();
 
                 PrintGeneratedExam(randomFilename);
+
+                File.Delete(randomFilename);
 
             }
         }
@@ -682,7 +712,27 @@ namespace TestMaker
                 ev.HasMorePages = false;
         }
 
+        private void BtnProfileNameAddUpd_Click(object sender, EventArgs e)
+        {
+            string sBtnText = btnProfileNameAddUpd.Text;
+            switch (sBtnText.ToUpper())
+            {
+                case "ADD NEW PROFILE":
+                    string sqlProAdd = "Insert Into dbo.ProfileNames (Name) Values (' " + txtProfileName.Text + " ')";
+                    General.AddUpdate(sqlProAdd);
+                    FillProfiles();
+                    txtProfileName.Text = "";
+                    break;
+                case "UPDATE PROFILE":
+                    string sqlProUpd = "Update dbo.ProfileNames Set Name = '" + txtProfileName.Text + "' Where ID = " + "--------------------";
+                    General.AddUpdate(sqlProUpd);
+                    FillProfiles();
+                    txtProfileName.Text = "";
+                    break;
+            }
+        }
 
+ 
     }
 
 
