@@ -38,6 +38,7 @@ namespace TestMaker
         public static string QTS_SelectedTopic;
         public static string QTS_SelectedSubTopic;
         public static string QTS_SelectedQuestion;
+        public static string PRO_SelectedName;
 
         public static string myDBConn = "Server=DESKTOP-BSFRLSL;Database=TestDB;Trusted_Connection=True;";
 

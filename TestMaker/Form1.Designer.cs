@@ -84,6 +84,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.cboProfileToGenerate = new System.Windows.Forms.ComboBox();
             this.gbxProfiles = new System.Windows.Forms.GroupBox();
+            this.dgv_Profiles = new System.Windows.Forms.DataGridView();
             this.btnProfileNameDelete = new System.Windows.Forms.Button();
             this.btnProfileNameClear = new System.Windows.Forms.Button();
             this.btnProfileNameAddUpd = new System.Windows.Forms.Button();
@@ -108,7 +109,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbpProfileSubTopic = new System.Windows.Forms.ComboBox();
             this.cboProfileTopic = new System.Windows.Forms.ComboBox();
-            this.dgv_Profiles = new System.Windows.Forms.DataGridView();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabTest.SuspendLayout();
             this.tabPageTopics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubTopics)).BeginInit();
@@ -122,10 +123,10 @@
             this.gbxGenAndPrint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDCopies)).BeginInit();
             this.gbxProfiles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Profiles)).BeginInit();
             this.grpBX.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Profiles)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -737,41 +738,50 @@
             this.gbxProfiles.TabStop = false;
             this.gbxProfiles.Text = "Profile List";
             // 
+            // dgv_Profiles
+            // 
+            this.dgv_Profiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Profiles.Location = new System.Drawing.Point(25, 44);
+            this.dgv_Profiles.Name = "dgv_Profiles";
+            this.dgv_Profiles.Size = new System.Drawing.Size(298, 93);
+            this.dgv_Profiles.TabIndex = 15;
+            this.dgv_Profiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Profiles_CellContentClick);
+            // 
             // btnProfileNameDelete
             // 
             this.btnProfileNameDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfileNameDelete.Location = new System.Drawing.Point(521, 109);
+            this.btnProfileNameDelete.Location = new System.Drawing.Point(603, 72);
             this.btnProfileNameDelete.Name = "btnProfileNameDelete";
-            this.btnProfileNameDelete.Size = new System.Drawing.Size(167, 28);
+            this.btnProfileNameDelete.Size = new System.Drawing.Size(120, 28);
             this.btnProfileNameDelete.TabIndex = 14;
-            this.btnProfileNameDelete.Text = "Delete Selected Profile";
+            this.btnProfileNameDelete.Text = "Delete";
             this.btnProfileNameDelete.UseVisualStyleBackColor = true;
             // 
             // btnProfileNameClear
             // 
             this.btnProfileNameClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfileNameClear.Location = new System.Drawing.Point(703, 109);
+            this.btnProfileNameClear.Location = new System.Drawing.Point(750, 72);
             this.btnProfileNameClear.Name = "btnProfileNameClear";
-            this.btnProfileNameClear.Size = new System.Drawing.Size(167, 28);
+            this.btnProfileNameClear.Size = new System.Drawing.Size(120, 28);
             this.btnProfileNameClear.TabIndex = 13;
-            this.btnProfileNameClear.Text = "Clear Profile Name";
+            this.btnProfileNameClear.Text = "Clear";
             this.btnProfileNameClear.UseVisualStyleBackColor = true;
             // 
             // btnProfileNameAddUpd
             // 
             this.btnProfileNameAddUpd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfileNameAddUpd.Location = new System.Drawing.Point(340, 109);
+            this.btnProfileNameAddUpd.Location = new System.Drawing.Point(451, 72);
             this.btnProfileNameAddUpd.Name = "btnProfileNameAddUpd";
-            this.btnProfileNameAddUpd.Size = new System.Drawing.Size(167, 28);
+            this.btnProfileNameAddUpd.Size = new System.Drawing.Size(120, 28);
             this.btnProfileNameAddUpd.TabIndex = 12;
-            this.btnProfileNameAddUpd.Text = "Add New Profile";
+            this.btnProfileNameAddUpd.Text = "Add";
             this.btnProfileNameAddUpd.UseVisualStyleBackColor = true;
             this.btnProfileNameAddUpd.Click += new System.EventHandler(this.BtnProfileNameAddUpd_Click);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(337, 47);
+            this.label20.Location = new System.Drawing.Point(352, 47);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(86, 16);
             this.label20.TabIndex = 11;
@@ -795,6 +805,7 @@
             // 
             // grpBX
             // 
+            this.grpBX.Controls.Add(this.label23);
             this.grpBX.Controls.Add(this.btnProfileItemDelete);
             this.grpBX.Controls.Add(this.btnProfileItemClear);
             this.grpBX.Controls.Add(this.btnProfileItemAddUpd);
@@ -843,7 +854,7 @@
             this.btnProfileItemAddUpd.Name = "btnProfileItemAddUpd";
             this.btnProfileItemAddUpd.Size = new System.Drawing.Size(204, 28);
             this.btnProfileItemAddUpd.TabIndex = 25;
-            this.btnProfileItemAddUpd.Text = "Add New Profile Item";
+            this.btnProfileItemAddUpd.Text = "Add Profile Item";
             this.btnProfileItemAddUpd.UseVisualStyleBackColor = true;
             // 
             // label18
@@ -977,13 +988,14 @@
             this.cboProfileTopic.Size = new System.Drawing.Size(204, 24);
             this.cboProfileTopic.TabIndex = 2;
             // 
-            // dgv_Profiles
+            // label23
             // 
-            this.dgv_Profiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Profiles.Location = new System.Drawing.Point(25, 44);
-            this.dgv_Profiles.Name = "dgv_Profiles";
-            this.dgv_Profiles.Size = new System.Drawing.Size(298, 93);
-            this.dgv_Profiles.TabIndex = 15;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(779, 107);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(78, 16);
+            this.label23.TabIndex = 28;
+            this.label23.Text = "(Max of:  99)";
             // 
             // Form1
             // 
@@ -1015,11 +1027,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUDCopies)).EndInit();
             this.gbxProfiles.ResumeLayout(false);
             this.gbxProfiles.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Profiles)).EndInit();
             this.grpBX.ResumeLayout(false);
             this.grpBX.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfileItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDQuestions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Profiles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1108,6 +1120,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cboProfileToGenerate;
         private System.Windows.Forms.DataGridView dgv_Profiles;
+        private System.Windows.Forms.Label label23;
     }
 }
 

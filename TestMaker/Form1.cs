@@ -717,13 +717,13 @@ namespace TestMaker
             string sBtnText = btnProfileNameAddUpd.Text;
             switch (sBtnText.ToUpper())
             {
-                case "ADD NEW PROFILE":
+                case "ADD":
                     string sqlProAdd = "Insert Into dbo.ProfileNames (Name) Values (' " + txtProfileName.Text + " ')";
                     General.AddUpdate(sqlProAdd);
                     FillProfiles();
                     txtProfileName.Text = "";
                     break;
-                case "UPDATE PROFILE":
+                case "UPDATE":
                     string sqlProUpd = "Update dbo.ProfileNames Set Name = '" + txtProfileName.Text + "' Where ID = " + "--------------------";
                     General.AddUpdate(sqlProUpd);
                     FillProfiles();
@@ -732,7 +732,12 @@ namespace TestMaker
             }
         }
 
- 
+        private void Dgv_Profiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtProfileName.Text = dgv_Profiles.CurrentRow.Cells[1].Value.ToString();
+            General.PRO_SelectedName = dgv_Profiles.CurrentRow.Cells[0].Value.ToString();
+            btnProfileNameAddUpd.Text = "Update";
+        }
     }
 
 
