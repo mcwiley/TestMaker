@@ -67,6 +67,11 @@ namespace TestMaker
             DataSet ds = new DataSet();
             ds = General.GetData("select TopicID as ID,TopicName as Name from Topics");
 
+            //sfComboBox1.DataSource = ds;
+            //sfComboBox1.ValueMember = "ID";
+            //sfComboBox1.DisplayMember = "Name";
+            
+
             switch(iGrid)
             {
                 case 1:
@@ -664,8 +669,8 @@ namespace TestMaker
                 {
                     printFont = new Font("Courier New", 10);
                     PrintDocument pd = new PrintDocument();
-                    if (numUDCopies.Value < 1) { numUDCopies.Value = 1; }
-                    pd.PrinterSettings.Copies = Convert.ToInt16(numUDCopies.Value);
+                    if (numtxtbx_NumCopies.Value < 1) { numtxtbx_NumCopies.Value = 1; }
+                    pd.PrinterSettings.Copies = Convert.ToInt16(numtxtbx_NumCopies.Value);
                     pd.PrintPage += new PrintPageEventHandler
                        (this.pd_PrintPage);
                     pd.Print();
@@ -738,6 +743,23 @@ namespace TestMaker
             General.PRO_SelectedName = dgv_Profiles.CurrentRow.Cells[0].Value.ToString();
             btnProfileNameAddUpd.Text = "Update";
         }
+
+        private void BtnProfileNameClear_Click(object sender, EventArgs e)
+        {
+            FillProfiles();
+            txtProfileName.Text = "";
+            btnProfileNameAddUpd.Text = "Add";
+        }
+
+        private void BtnProfileNameDelete_Click(object sender, EventArgs e)
+        {
+            string SQLProfileDelete = "";
+            General.AddUpdate("Delete From [dbo].[ProfileNames] Where ID = " + dgv_Profiles.CurrentRow.Cells[0].Value.ToString());
+            FillProfiles();
+        }
+
+
+
     }
 
 
