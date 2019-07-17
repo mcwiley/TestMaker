@@ -67,11 +67,6 @@ namespace TestMaker
             DataSet ds = new DataSet();
             ds = General.GetData("select TopicID as ID,TopicName as Name from Topics");
 
-            //sfComboBox1.DataSource = ds;
-            //sfComboBox1.ValueMember = "ID";
-            //sfComboBox1.DisplayMember = "Name";
-            
-
             switch(iGrid)
             {
                 case 1:
@@ -94,6 +89,42 @@ namespace TestMaker
                     break;
             }
         }
+
+        public void FillProTopics()
+        {
+            DataSet dsProTopics = new DataSet();
+            dsProTopics = General.GetData("Select TopicID as ID,TopicName as Name from Topics Order By Name");
+
+            List<string> _itms = new List<string>();
+
+            _itms.Clear();
+
+            foreach(DataRow dr in dsProTopics.Tables[0].Rows)
+            {
+                _itms.Add(dr["ID"].ToString() + " | " + dr["Name"].ToString());
+            }
+
+            lstProTopics.DataSource = _itms;
+        }
+
+        public void FillProSubTopics(string sTID)
+        {
+            DataSet dsProSubTopics = new DataSet();
+            dsProSubTopics = General.GetData("Select SubTopicID, SubTopicName from SubTopics Where TopicID = " + sTID + " Order By SubTopicName");
+
+            List<string> _itms = new List<string>();
+
+            _itms.Clear();
+
+            foreach (DataRow dr in dsProSubTopics.Tables[0].Rows)
+            {
+                _itms.Add(dr["SubTopicID"].ToString() + " | " + dr["SubTopicName"].ToString());
+            }
+
+            lstProSubTopics.DataSource = _itms;
+        }
+
+
 
         /// <summary>
         /// Fills the sub topics.
@@ -309,6 +340,7 @@ namespace TestMaker
                     FillTopics(2); // fill the topics
                     break;
                 case 2:
+                    FillProTopics();
                     break;
 
             }
@@ -753,13 +785,23 @@ namespace TestMaker
 
         private void BtnProfileNameDelete_Click(object sender, EventArgs e)
         {
-            string SQLProfileDelete = "";
             General.AddUpdate("Delete From [dbo].[ProfileNames] Where ID = " + dgv_Profiles.CurrentRow.Cells[0].Value.ToString());
             FillProfiles();
         }
 
+        private void LstProTopics_Click(object sender, EventArgs e)
+        {
+            string selItm = lstProTopics.SelectedItem.ToString().Split('|')[0].Trim();
 
+            FillProSubTopics(selItm);
 
+            MessageBox.Show(selItm);
+        }
+
+        private void BtnProfileItemClear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
